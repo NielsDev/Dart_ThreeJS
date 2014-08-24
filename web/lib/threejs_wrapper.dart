@@ -13,6 +13,7 @@ import 'math/math.dart' as Math;
 export 'math/math.dart';
 
 part 'threebase.dart';
+part 'mapping_modes.dart';
 
 // Core
 part 'core/object3d.dart';
@@ -181,6 +182,7 @@ final int MixOperation = context["THREE"]["MixOperation"];
 final int AddOperation = context["THREE"]["AddOperation"];
 
 // MAPPING MODES
+// See mapping_modes.dart
 //final Object UVMapping = context["THREE"]["UVMapping"];
 //final Object CubeReflectionMapping = context["THREE"]["CubeReflectionMapping"];
 //final Object CubeRefractionMapping = context["THREE"]["CubeRefractionMapping"];
