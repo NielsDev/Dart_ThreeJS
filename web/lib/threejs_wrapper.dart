@@ -13,7 +13,6 @@ import 'math/math.dart' as Math;
 export 'math/math.dart';
 
 part 'threebase.dart';
-part 'mapping_modes.dart';
 
 // Core
 part 'core/object3d.dart';
@@ -79,6 +78,10 @@ part 'cameras/camera.dart';
 part 'cameras/perspective_camera.dart';
 part 'cameras/orthographic_camera.dart';
 part 'cameras/cube_camera.dart';
+
+// Textures
+part 'textures/mapping_modes.dart';
+part 'textures/texture.dart';
 
 // Renderers
 part 'renderers/abstract_renderer.dart';

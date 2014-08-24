@@ -1,6 +1,18 @@
 part of ThreeJSWrapper;
 
-class UVMapping extends ThreeBase
+class TextureMapping extends ThreeBase
+{
+  TextureMapping()
+  {
+  }
+  
+  TextureMapping.fromJsObject(JsObject obj)
+  {
+    _obj = obj;
+  }
+}
+
+class UVMapping extends TextureMapping
 {
   UVMapping()
   {
@@ -13,7 +25,7 @@ class UVMapping extends ThreeBase
   }
 }
 
-class CubeReflectionMapping extends ThreeBase
+class CubeReflectionMapping extends TextureMapping
 {
   CubeReflectionMapping()
   {
@@ -26,7 +38,7 @@ class CubeReflectionMapping extends ThreeBase
   }
 }
 
-class CubeRefractionMapping extends ThreeBase
+class CubeRefractionMapping extends TextureMapping
 {
   CubeRefractionMapping()
   {
@@ -39,7 +51,7 @@ class CubeRefractionMapping extends ThreeBase
   }
 }
 
-class SphericalReflectionMapping extends ThreeBase
+class SphericalReflectionMapping extends TextureMapping
 {
   SphericalReflectionMapping()
   {
@@ -52,7 +64,7 @@ class SphericalReflectionMapping extends ThreeBase
   }
 }
 
-class SphericalRefractionMapping extends ThreeBase
+class SphericalRefractionMapping extends TextureMapping
 {
   SphericalRefractionMapping()
   {
