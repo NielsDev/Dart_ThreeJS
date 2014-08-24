@@ -161,7 +161,7 @@ class WebGLRenderer extends AbstractRenderer
   
   void updateShadowMap(Scene scene, Camera camera) => _obj.callMethod("updateShadowMap", [ scene._obj, camera._obj ]);
   
-  // TODO: renderBufferImmediate
+  void renderBufferImmediate(Object3D object, WebGLProgram program, Material shading) => _obj.callMethod("renderBufferImmediate", [ object._obj, program._obj, shading._obj ]);
   
   void renderBufferDirect(Camera camera, List<Light> lights, AbstractFog fog, Material material, BufferGeometry geometryGroup, Object3D object)
   {

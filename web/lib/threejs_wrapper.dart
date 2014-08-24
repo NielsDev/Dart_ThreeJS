@@ -90,6 +90,10 @@ part 'renderers/webgl_renderer.dart';
 part 'renderers/webgl_render_target.dart';
 part 'renderers/webgl_render_target_cube.dart';
 
+// Renderers/webgl
+part 'renderers/webgl/webgl_program.dart';
+part 'renderers/webgl/webgl_shader.dart';
+
 // Extras/core
 part 'extras/core/curve.dart';
 part 'extras/core/curve_path.dart';
