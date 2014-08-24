@@ -1,18 +1,18 @@
 part of ThreeJSWrapper;
 
-class ExtrudeGeometry extends Geometry
+class ShapeGeometry extends Geometry
 {
-  ExtrudeGeometry([List<Shape> shapes, Map options])
+  ShapeGeometry(List<Shape> shapes, Map options)
   {
     List<JsObject> list = [];
     
     for(int i = 0, l = shapes.length; i < l; i++)
       list.add(shapes[i]._obj);
     
-    _obj = new JsObject(context["THREE"]["ExtrudeGeometry"], [ new JsObject.jsify(list), new JsObject.jsify(options) ]);
+    _obj = new JsObject(context["THREE"]["ShapeGeometry"], [ new JsObject.jsify(list), new JsObject.jsify(options) ]);
   }
   
-  ExtrudeGeometry.fromJsObject(JsObject obj)
+  ShapeGeometry.fromJsObject(JsObject obj)
   {
     _obj = obj;
   }

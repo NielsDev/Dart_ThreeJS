@@ -97,6 +97,20 @@ part 'extras/core/shape.dart';
 part 'extras/geometries/box_geometry.dart';
 part 'extras/geometries/circle_geometry.dart';
 part 'extras/geometries/extrude_geometry.dart';
+part 'extras/geometries/icosahedron_geometry.dart';
+part 'extras/geometries/lathe_geometry.dart';
+part 'extras/geometries/octahedron_geometry.dart';
+part 'extras/geometries/parametric_geometry.dart';
+part 'extras/geometries/plane_geometry.dart';
+part 'extras/geometries/polyhedron_geometry.dart';
+part 'extras/geometries/ring_geometry.dart';
+part 'extras/geometries/shape_geometry.dart';
+part 'extras/geometries/sphere_geometry.dart';
+part 'extras/geometries/tetrahedron_geometry.dart';
+part 'extras/geometries/text_geometry.dart';
+part 'extras/geometries/torus_geometry.dart';
+part 'extras/geometries/torus_knot_geometry.dart';
+part 'extras/geometries/tube_geometry.dart';
 
 
 // == CONSTANTS ==
