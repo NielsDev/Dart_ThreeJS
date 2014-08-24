@@ -31,6 +31,7 @@ part 'lights/point_light.dart';
 part 'lights/hemisphere_light.dart';
 part 'lights/ambient_light.dart';
 part 'lights/area_light.dart';
+part 'lights/spot_light.dart';
 
 // Math
 part 'math/quaternion.dart';
