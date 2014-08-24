@@ -13,10 +13,7 @@ class BufferGeometry extends EventDispatcher
   }
   
   int get id => _obj["id"];
-  void set id(int id)
-  {
-    _obj["id"] = id;
-  }
+  String get uuid => _obj["uuid"];
   
   Map get attributes => _obj["attributes"];
   void set attributes(Map attributes)

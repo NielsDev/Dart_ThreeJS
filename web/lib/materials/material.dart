@@ -13,10 +13,7 @@ class Material extends EventDispatcher
   }
   
   int get id => _obj["id"];
-  void set id(int id)
-  {
-    _obj["id"] = id;
-  }
+  String get uuid => _obj["uuid"];
   
   String get name => _obj["name"];
   void set name(String name)
