@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class WebGLRenderTarget extends AbstractRenderTarget
+class WebGLRenderTarget extends ThreeBase
 {
   WebGLRenderTarget([num width, num height, Map options])
   {

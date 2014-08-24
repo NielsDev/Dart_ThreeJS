@@ -71,7 +71,6 @@ part 'cameras/orthographic_camera.dart';
 // Renderers
 part 'renderers/canvas_renderer.dart';
 part 'renderers/webgl_renderer.dart';
-part 'renderers/abstract_render_target.dart';
 part 'renderers/webgl_render_target.dart';
 part 'renderers/webgl_render_target_cube.dart';
 

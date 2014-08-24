@@ -165,8 +165,15 @@ class WebGLRenderer extends ThreeBase
   // TODO: renderBufferDirect
   // TODO: renderBuffer
   
-  // TODO: render(scene, camera, renderTarget, forceClear)
-  void render(Scene scene, Camera camera) => _obj.callMethod("render", [ scene._obj, camera._obj ]);
+  void render(Scene scene, Camera camera, [WebGLRenderTarget renderTarget, bool forceClear])
+  {
+    if(renderTarget == null)
+      _obj.callMethod("render", [ scene._obj, camera._obj ]);
+    else if(renderTarget != null && forceClear == null)
+      _obj.callMethod("render", [ scene._obj, camera._obj, renderTarget._obj ]);
+    else
+      _obj.callMethod("render", [ scene._obj, camera._obj, renderTarget._obj, forceClear ]);
+  }
   
   // TODO: renderImmediateObject
   
@@ -184,7 +191,7 @@ class WebGLRenderer extends ThreeBase
   
   // TODO: setTexture
   
-  // TODO: setRenderTarget
+  void setRenderTarget(WebGLRenderTarget renderTarget) => _obj.callMethod("setRenderTarget", [ renderTarget._obj ]);
   
   bool supportsCompressedTextureS3TC() => _obj.callMethod("supportsCompressedTextureS3TC");
   
@@ -198,5 +205,5 @@ class WebGLRenderer extends ThreeBase
   
   bool supportsFloatTextures() => _obj.callMethod("supportsFloatTextures");
   
-  // TODO: clearTarget
+  void clearTarget(WebGLRenderTarget renderTarget, bool color, bool depth, bool stencil) => _obj.callMethod("clearTarget", [ renderTarget._obj, color, depth, stencil ]);
 }
