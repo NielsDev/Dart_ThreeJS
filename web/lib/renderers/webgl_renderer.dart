@@ -162,8 +162,38 @@ class WebGLRenderer extends AbstractRenderer
   void updateShadowMap(Scene scene, Camera camera) => _obj.callMethod("updateShadowMap", [ scene._obj, camera._obj ]);
   
   // TODO: renderBufferImmediate
-  // TODO: renderBufferDirect
-  // TODO: renderBuffer
+  
+  void renderBufferDirect(Camera camera, List<Light> lights, AbstractFog fog, Material material, BufferGeometry geometryGroup, Object3D object)
+  {
+    JsObject cameraJS = camera._obj;
+    JsObject fogJS = fog._obj;
+    JsObject materialJS = material._obj;
+    JsObject geometryGroupJS = geometryGroup._obj;
+    JsObject objectJS = object._obj;
+    
+    List<JsObject> lightsJS = [];
+    
+    for(int i = 0, l = lights.length; i < l; i++)
+      lightsJS.add(lights[i]._obj);
+    
+    _obj.callMethod("renderBufferDirect", [ cameraJS, new JsObject.jsify(lightsJS), fogJS, materialJS, geometryGroupJS, objectJS ]);
+  }
+  
+  void renderBuffer(Camera camera, List<Light> lights, AbstractFog fog, Material material, Geometry geometryGroup, Object3D object)
+  {
+    JsObject cameraJS = camera._obj;
+    JsObject fogJS = fog._obj;
+    JsObject materialJS = material._obj;
+    JsObject geometryGroupJS = geometryGroup._obj;
+    JsObject objectJS = object._obj;
+    
+    List<JsObject> lightsJS = [];
+    
+    for(int i = 0, l = lights.length; i < l; i++)
+      lightsJS.add(lights[i]._obj);
+    
+    _obj.callMethod("renderBuffer", [ cameraJS, new JsObject.jsify(lightsJS), fogJS, materialJS, geometryGroupJS, objectJS ]);
+  }
   
   void render(Scene scene, Camera camera, [WebGLRenderTarget renderTarget, bool forceClear])
   {
@@ -175,11 +205,36 @@ class WebGLRenderer extends AbstractRenderer
       _obj.callMethod("render", [ scene._obj, camera._obj, renderTarget._obj, forceClear ]);
   }
   
-  // TODO: renderImmediateObject
+  void renderImmediateObject(Camera camera, List<Light> lights, AbstractFog fog, Material material, Object3D object)
+  {
+    JsObject cameraJS = camera._obj;
+    JsObject fogJS = fog._obj;
+    JsObject materialJS = material._obj;
+    JsObject objectJS = object._obj;
+    
+    List<JsObject> lightsJS = [];
+    
+    for(int i = 0, l = lights.length; i < l; i++)
+      lightsJS.add(lights[i]._obj);
+    
+    _obj.callMethod("renderImmediateObject", [ cameraJS, new JsObject.jsify(lightsJS), fogJS, materialJS, objectJS ]);
+  }
   
   void initWebGLObjects(Scene scene) => _obj.callMethod("initWebGLObjects", [ scene._obj ]);
   
-  // TODO: initMaterial
+  void initMaterial(Material material, List<Light> lights, AbstractFog fog, Object3D object)
+  {
+    JsObject materialJS = material._obj;
+    JsObject fogJS = fog._obj;
+    JsObject objectJS = object._obj;
+    
+    List<JsObject> lightsJS = [];
+    
+    for(int i = 0, l = lights.length; i < l; i++)
+      lightsJS.add(lights[i]._obj);
+    
+    _obj.callMethod("initMaterial", [ materialJS, new JsObject.jsify(lightsJS), fogJS, objectJS ]);
+  }
   
   void setFaceCulling(String cullFace, String frontFace) => _obj.callMethod("setFaceCulling", [ cullFace, frontFace ]);
   
@@ -189,7 +244,7 @@ class WebGLRenderer extends AbstractRenderer
   
   void setBlending(int blending, int blendEquation, int blendSrc, int blendDst) => _obj.callMethod("setBlending", [ blending, blendEquation, blendSrc, blendDst ]);
   
-  // TODO: setTexture
+  void setTexture(Texture texture, int slot) => _obj.callMethod("setTexture", [ texture._obj, slot ]);
   
   void setRenderTarget(WebGLRenderTarget renderTarget) => _obj.callMethod("setRenderTarget", [ renderTarget._obj ]);
   
