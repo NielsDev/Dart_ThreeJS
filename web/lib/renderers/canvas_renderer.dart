@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class CanvasRenderer extends ThreeBase
+class CanvasRenderer extends AbstractRenderer
 {
   CanvasRenderer([Map parameters])
   {

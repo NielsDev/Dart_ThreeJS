@@ -67,8 +67,10 @@ part 'scenes/fog_exp2.dart';
 part 'cameras/camera.dart';
 part 'cameras/perspective_camera.dart';
 part 'cameras/orthographic_camera.dart';
+part 'cameras/cube_camera.dart';
 
 // Renderers
+part 'renderers/abstract_renderer.dart';
 part 'renderers/canvas_renderer.dart';
 part 'renderers/webgl_renderer.dart';
 part 'renderers/webgl_render_target.dart';

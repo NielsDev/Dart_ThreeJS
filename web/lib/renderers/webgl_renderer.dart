@@ -3,7 +3,7 @@ part of ThreeJSWrapper;
 // So we don't conflict in the class with RenderingContext
 JsObject jsContext = context;
 
-class WebGLRenderer extends ThreeBase
+class WebGLRenderer extends AbstractRenderer
 {
   WebGLRenderer([Map parameters])
   {

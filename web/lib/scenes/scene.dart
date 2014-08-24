@@ -14,6 +14,10 @@ class Scene extends Object3D
     _obj = obj;
   }
   
+  // We need to keep this reference because if we use new Fog.fromJsObject
+  // there will be a problem because when it's not of the type Fog
+  // That will cause the instance to have a wrong link
+  // eg.: instance = FogExp2 but is instantiated as Fog, this will cause trouble
   AbstractFog get fog
   {
     return _fog;
