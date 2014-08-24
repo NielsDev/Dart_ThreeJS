@@ -86,8 +86,17 @@ part 'renderers/webgl_renderer.dart';
 part 'renderers/webgl_render_target.dart';
 part 'renderers/webgl_render_target_cube.dart';
 
+// Extras/core
+part 'extras/core/curve.dart';
+part 'extras/core/curve_path.dart';
+part 'extras/core/path.dart';
+part 'extras/core/gyroscope.dart';
+part 'extras/core/shape.dart';
+
 // Extras/geometries
 part 'extras/geometries/box_geometry.dart';
+part 'extras/geometries/circle_geometry.dart';
+part 'extras/geometries/extrude_geometry.dart';
 
 
 // == CONSTANTS ==
