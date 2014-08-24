@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Geometry extends ThreeBase
+class Geometry extends EventDispatcher
 {
   Geometry()
   {

@@ -23,6 +23,7 @@ part 'core/buffer_attribute.dart';
 part 'core/clock.dart';
 part 'core/raycaster.dart';
 part 'core/projector.dart';
+part 'core/event_dispatcher.dart';
 
 // Math
 part 'math/quaternion.dart';

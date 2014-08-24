@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Material extends ThreeBase
+class Material extends EventDispatcher
 {
   Material()
   {

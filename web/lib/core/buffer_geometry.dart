@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class BufferGeometry extends ThreeBase
+class BufferGeometry extends EventDispatcher
 {
   BufferGeometry()
   {

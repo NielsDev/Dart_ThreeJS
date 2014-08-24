@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Object3D extends ThreeBase
+class Object3D extends EventDispatcher
 {
   Object3D()
   {
