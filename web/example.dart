@@ -16,15 +16,9 @@ void init()
   THREE.MeshBasicMaterial material = new THREE.MeshBasicMaterial({ "color": 0xFF0000, "wireframe": true });
   mesh = new THREE.Mesh(geometry, material);
   
-  void testje(obj)
-  {
-    print(obj);
-  }
-  scene.traverse(testje);
-  
   scene.add(mesh);
   
-  renderer = new THREE.CanvasRenderer({});
+  renderer = new THREE.CanvasRenderer();
   renderer.setSize(640, 480);
   
   document.body.append(renderer.domElement);
