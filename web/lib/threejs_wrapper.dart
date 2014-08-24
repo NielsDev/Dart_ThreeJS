@@ -25,6 +25,13 @@ part 'core/raycaster.dart';
 part 'core/projector.dart';
 part 'core/event_dispatcher.dart';
 
+// Lights
+part 'lights/light.dart';
+part 'lights/point_light.dart';
+part 'lights/hemisphere_light.dart';
+part 'lights/ambient_light.dart';
+part 'lights/area_light.dart';
+
 // Math
 part 'math/quaternion.dart';
 part 'math/euler.dart';
