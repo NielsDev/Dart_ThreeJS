@@ -3,6 +3,7 @@ library ThreeJSWrapper;
 import 'dart:html';
 import 'dart:js';
 import 'dart:typed_data';
+import 'dart:web_gl';
 
 // TODO: change the Object's in methods to the correct types (eg void method(Object matrix3) should become method(Matrix3 matrix3))
 // TODO: missing types for list (and missing conversions)
@@ -69,6 +70,7 @@ part 'cameras/orthographic_camera.dart';
 
 // Renderers
 part 'renderers/canvas_renderer.dart';
+part 'renderers/webgl_renderer.dart';
 
 // Extras/geometries
 part 'extras/geometries/box_geometry.dart';

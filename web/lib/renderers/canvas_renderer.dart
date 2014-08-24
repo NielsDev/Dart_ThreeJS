@@ -21,7 +21,7 @@ class CanvasRenderer extends ThreeBase
   }
   
   Map get info => _obj["info"];
-  Element get domElement => _obj["domElement"];
+  CanvasElement get domElement => _obj["domElement"];
   num get devicePixelRatio => _obj["devicePixelRatio"];
   
   bool get autoClear => _obj["autoClear"];
