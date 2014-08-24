@@ -5,7 +5,7 @@ import 'dart:js';
 import 'dart:typed_data';
 import 'dart:web_gl';
 
-// TODO: change the Object's in methods to the correct types (eg void method(Object matrix3) should become method(Matrix3 matrix3))
+// TODO: change the Objects in methods to the correct types (eg void method(Object matrix3) should become method(Matrix3 matrix3))
 // TODO: missing types for list (and missing conversions)
 // TODO: implement more stuff
 
@@ -32,6 +32,7 @@ part 'lights/hemisphere_light.dart';
 part 'lights/ambient_light.dart';
 part 'lights/area_light.dart';
 part 'lights/spot_light.dart';
+part 'lights/directional_light.dart';
 
 // Math
 part 'math/quaternion.dart';
