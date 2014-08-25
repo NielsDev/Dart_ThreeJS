@@ -27,8 +27,8 @@ class BufferGeometry extends EventDispatcher
     _obj["dynamic"] = dynamic;
   }
   
-  List get offsets => _obj["offsets"];
-  void set offsets(List offsets)
+  List<Map> get offsets => _obj["offsets"];
+  void set offsets(List<Map> offsets)
   {
     _obj["offsets"] = new JsObject.jsify(offsets);
   }
@@ -45,8 +45,8 @@ class BufferGeometry extends EventDispatcher
     _obj["boundingSphere"] = boundingSphere._obj;
   }
   
-  List get morphTargets => _obj["morphTargets"];
-  void set morphTargets(List morphTargets)
+  List<Map> get morphTargets => _obj["morphTargets"];
+  void set morphTargets(List<Map> morphTargets)
   {
     _obj["morphTargets"] = morphTargets;
   }
@@ -60,7 +60,7 @@ class BufferGeometry extends EventDispatcher
   
   // == METHODS ==
   
-  void applyMatrix(Object matrix) => _obj.callMethod("applyMatrix", [ matrix ]);
+  void applyMatrix(Matrix4 matrix) => _obj.callMethod("applyMatrix", [ matrix._obj ]);
   
   void computeVertexNormals() => _obj.callMethod("computeVertexNormals)");
   
