@@ -5,10 +5,6 @@ import 'dart:js';
 import 'dart:typed_data';
 import 'dart:web_gl';
 
-// Math
-import 'math/math.dart' as Math;
-export 'math/math.dart';
-
 // ThreeBase object
 part 'threebase.dart';
 
@@ -33,6 +29,7 @@ part 'lights/spot_light.dart';
 part 'lights/directional_light.dart';
 
 // Math
+part 'math/math.dart';
 part 'math/quaternion.dart';
 part 'math/euler.dart';
 part 'math/vector2.dart';
@@ -106,6 +103,9 @@ part 'renderers/webgl_render_target_cube.dart';
 // Renderers/webgl
 part 'renderers/webgl/webgl_program.dart';
 part 'renderers/webgl/webgl_shader.dart';
+
+// Extras
+part 'extras/image_utils.dart';
 
 // Extras/core
 part 'extras/core/curve.dart';
