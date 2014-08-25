@@ -181,7 +181,16 @@ class Object3D extends EventDispatcher
   
   void add(Object3D object) => _obj.callMethod("add", [ object._obj ]);
   
-  void traverse(Function callback) => _obj.callMethod("traverse", [ callback ]);
+  void traverse(Function callback)
+  {
+    void callBackWrapper(JsObject objJS)
+    {
+      Object3D obj = new Object3D.fromJsObject(objJS);
+      callback(objJS);
+    }
+    
+    _obj.callMethod("traverse", [ callBackWrapper ]);
+  }
   
   void updateMatrix() => _obj.callMethod("updateMatrix");
   
