@@ -64,6 +64,8 @@ part 'materials/line_dashed_material.dart';
 part 'materials/point_cloud_material.dart';
 part 'materials/shader_material.dart';
 part 'materials/raw_shader_material.dart';
+part 'materials/sprite_material.dart';
+part 'materials/sprite_canvas_material.dart';
 
 // Objects
 part 'objects/mesh.dart';
