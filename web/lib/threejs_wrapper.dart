@@ -63,6 +63,7 @@ part 'materials/mesh_lambert_material.dart';
 part 'materials/mesh_phong_material.dart';
 part 'materials/line_basic_material.dart';
 part 'materials/line_dashed_material.dart';
+part 'materials/point_cloud_material.dart';
 
 // Objects
 part 'objects/mesh.dart';
