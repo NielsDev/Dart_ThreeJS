@@ -1,23 +1,23 @@
 part of ThreeJSWrapper;
 
-class MeshPhongLambertMaterial extends Material
+class MeshPhongMaterial extends Material
 {
-  MeshPhongLambertMaterial([Map parameters])
+  MeshPhongMaterial([Map parameters])
   {
     if(parameters == null)
     {
-      _obj = new JsObject(context["THREE"]["MeshPhongLambertMaterial"]);
+      _obj = new JsObject(context["THREE"]["MeshPhongMaterial"]);
     }
     else
     {
       if(parameters["envMap"] != null)
         parameters["envMap"] = parameters["envMap"]._obj;
       
-      _obj = new JsObject(context["THREE"]["MeshPhongLambertMaterial"], [ new JsObject.jsify(parameters) ]);
+      _obj = new JsObject(context["THREE"]["MeshPhongMaterial"], [ new JsObject.jsify(parameters) ]);
     }
   }
   
-  MeshPhongLambertMaterial.fromJsObject(JsObject obj)
+  MeshPhongMaterial.fromJsObject(JsObject obj)
   {
     _obj = obj;
   }
