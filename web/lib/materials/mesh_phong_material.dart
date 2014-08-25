@@ -258,10 +258,10 @@ class MeshPhongLambertMaterial extends Material
   // == METHODS ==
   
   
-  MeshLambertMaterial clone([MeshLambertMaterial material])
+  MeshPhongMaterial clone([MeshPhongMaterial material])
   {
    JsObject cloned = _obj.callMethod("clone");
-   MeshLambertMaterial clone = new MeshLambertMaterial.fromJsObject(cloned);
+   MeshPhongMaterial clone = new MeshPhongMaterial.fromJsObject(cloned);
    return clone;
   }
 }
