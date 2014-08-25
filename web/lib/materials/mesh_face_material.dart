@@ -36,4 +36,15 @@ class MeshFaceMaterial extends Material
     
     _obj["materials"] = new JsObject.jsify(list);
   }
+
+  
+  // == METHODS ==
+  
+  
+  MeshFaceMaterial clone([MeshFaceMaterial material])
+  {
+   JsObject cloned = _obj.callMethod("clone");
+   MeshFaceMaterial clone = new MeshFaceMaterial.fromJsObject(cloned);
+   return clone;
+  }
 }

@@ -26,4 +26,15 @@ class MeshDepthMaterial extends Material
   {
     _obj["wireframeLinewidth"] = wireframeLinewidth;
   }
+  
+  
+  // == METHODS ==
+  
+  
+  MeshDepthMaterial clone([MeshDepthMaterial material])
+  {
+   JsObject cloned = _obj.callMethod("clone");
+   MeshDepthMaterial clone = new MeshDepthMaterial.fromJsObject(cloned);
+   return clone;
+  }
 }

@@ -38,4 +38,15 @@ class MeshNormalMaterial extends Material
   {
     _obj["wireframeLinewidth"] = wireframeLinewidth;
   }
+
+  
+  // == METHODS ==
+  
+  
+  MeshNormalMaterial clone([MeshNormalMaterial material])
+  {
+   JsObject cloned = _obj.callMethod("clone");
+   MeshNormalMaterial clone = new MeshNormalMaterial.fromJsObject(cloned);
+   return clone;
+  }
 }

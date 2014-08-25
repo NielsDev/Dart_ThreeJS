@@ -204,4 +204,15 @@ class MeshLambertMaterial extends Material
   {
     _obj["wrapAround"] = wrapAround;
   }
+
+  
+  // == METHODS ==
+  
+  
+  MeshLambertMaterial clone([MeshLambertMaterial material])
+  {
+   JsObject cloned = _obj.callMethod("clone");
+   MeshLambertMaterial clone = new MeshLambertMaterial.fromJsObject(cloned);
+   return clone;
+  }
 }

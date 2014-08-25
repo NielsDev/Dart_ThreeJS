@@ -121,4 +121,15 @@ class MeshBasicMaterial extends Material
   {
     _obj["refractionRatio"] = refractionRatio;
   }
+  
+  
+  // == METHODS ==
+  
+  
+  MeshBasicMaterial clone([MeshBasicMaterial material])
+  {
+    JsObject cloned = _obj.callMethod("clone");
+    MeshBasicMaterial clone = new MeshBasicMaterial.fromJsObject(cloned);
+    return clone;
+  }
 }
