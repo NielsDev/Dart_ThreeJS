@@ -5,9 +5,16 @@ class MeshDepthMaterial extends Material
   MeshDepthMaterial([Map parameters])
   {
     if(parameters == null)
+    {
       _obj = new JsObject(context["THREE"]["MeshDepthMaterial"]);
+    }
     else
+    {
+      if(parameters["envMap"] != null)
+        parameters["envMap"] = parameters["envMap"]._obj;
+      
       _obj = new JsObject(context["THREE"]["MeshDepthMaterial"], [ new JsObject.jsify(parameters) ]);
+    }
   }
   
   MeshDepthMaterial.fromJsObject(JsObject obj)

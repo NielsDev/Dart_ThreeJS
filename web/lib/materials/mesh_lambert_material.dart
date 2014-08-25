@@ -5,9 +5,16 @@ class MeshLambertMaterial extends Material
   MeshLambertMaterial([Map parameters])
   {
     if(parameters == null)
+    {
       _obj = new JsObject(context["THREE"]["MeshLambertMaterial"]);
+    }
     else
+    {
+      if(parameters["envMap"] != null)
+        parameters["envMap"] = parameters["envMap"]._obj;
+      
       _obj = new JsObject(context["THREE"]["MeshLambertMaterial"], [ new JsObject.jsify(parameters) ]);
+    }
   }
   
   MeshLambertMaterial.fromJsObject(JsObject obj)
