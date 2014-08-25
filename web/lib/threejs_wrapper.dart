@@ -5,9 +5,11 @@ import 'dart:js';
 import 'dart:typed_data';
 import 'dart:web_gl';
 
+// Math
 import 'math/math.dart' as Math;
 export 'math/math.dart';
 
+// ThreeBase object
 part 'threebase.dart';
 
 // Core
@@ -60,6 +62,7 @@ part 'materials/mesh_phong_material.dart';
 part 'materials/line_basic_material.dart';
 part 'materials/line_dashed_material.dart';
 part 'materials/point_cloud_material.dart';
+part 'materials/shader_material.dart';
 
 // Objects
 part 'objects/mesh.dart';
