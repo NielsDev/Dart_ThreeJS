@@ -82,6 +82,8 @@ part 'cameras/cube_camera.dart';
 // Textures
 part 'textures/mapping_modes.dart';
 part 'textures/texture.dart';
+part 'textures/data_texture.dart';
+part 'textures/compressed_texture.dart';
 
 // Renderers
 part 'renderers/abstract_renderer.dart';
