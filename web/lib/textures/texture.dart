@@ -144,9 +144,15 @@ class Texture extends EventDispatcher
   // == METHODS ==
   
   
-  Texture clone(Texture texture)
+  Texture clone([Texture texture])
   {
-    JsObject cloned = _obj.callMethod("clone", [ texture._obj ]);
+    JsObject cloned;
+    
+    if(texture == null)
+      cloned = _obj.callMethod("clone");
+    else
+      cloned = _obj.callMethod("clone", [ texture._obj ]);
+    
     Texture clone = new Texture.fromJsObject(cloned);
     return clone;
   }

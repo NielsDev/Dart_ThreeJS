@@ -11,4 +11,21 @@ class DataTexture extends Texture
   {
     _obj = obj;
   }
+  
+  
+  // == METHODS ==
+  
+  
+  DataTexture clone([DataTexture texture])
+  {
+    JsObject cloned;
+    
+    if(texture == null)
+      cloned = _obj.callMethod("clone");
+    else
+      cloned = _obj.callMethod("clone", [ texture._obj ]);
+    
+    DataTexture clone = new DataTexture.fromJsObject(cloned);
+    return clone;
+  }
 }

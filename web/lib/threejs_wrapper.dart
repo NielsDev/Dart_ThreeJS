@@ -56,6 +56,10 @@ part 'math/ray.dart';
 // Materials
 part 'materials/material.dart';
 part 'materials/mesh_basic_material.dart';
+part 'materials/mesh_normal_material.dart';
+part 'materials/mesh_depth_material.dart';
+part 'materials/mesh_face_material.dart';
+part 'materials/mesh_lambert_material.dart';
 
 // Objects
 part 'objects/mesh.dart';
@@ -84,6 +88,7 @@ part 'textures/mapping_modes.dart';
 part 'textures/texture.dart';
 part 'textures/data_texture.dart';
 part 'textures/compressed_texture.dart';
+part 'textures/cube_texture.dart';
 
 // Renderers
 part 'renderers/abstract_renderer.dart';

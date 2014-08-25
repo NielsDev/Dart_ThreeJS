@@ -11,4 +11,21 @@ class CompressedTexture extends Texture
   {
     _obj = obj;
   }
+  
+  
+  // == METHODS ==
+  
+  
+  CompressedTexture clone([CompressedTexture texture])
+  {
+    JsObject cloned;
+    
+    if(texture == null)
+      cloned = _obj.callMethod("clone");
+    else
+      cloned = _obj.callMethod("clone", [ texture._obj ]);
+    
+    CompressedTexture clone = new CompressedTexture.fromJsObject(cloned);
+    return clone;
+  }
 }
