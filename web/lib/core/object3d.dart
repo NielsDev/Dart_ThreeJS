@@ -65,8 +65,8 @@ class Object3D extends EventDispatcher
     _obj["position"] = position._obj;
   }
   
-  Vector3 get rotation => new Vector3.fromJsObject(_obj["rotation"]);
-  void set rotation(Vector3 rotation)
+  Euler get rotation => new Euler.fromJsObject(_obj["rotation"]);
+  void set rotation(Euler rotation)
   {
     _obj["rotation"] = rotation._obj;
   }
