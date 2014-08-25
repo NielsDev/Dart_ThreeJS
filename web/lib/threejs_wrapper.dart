@@ -5,10 +5,6 @@ import 'dart:js';
 import 'dart:typed_data';
 import 'dart:web_gl';
 
-// TODO: change the Objects in methods to the correct types (eg void method(Object matrix3) should become method(Matrix3 matrix3))
-// TODO: missing types for list (and missing conversions)
-// TODO: implement more stuff
-
 import 'math/math.dart' as Math;
 export 'math/math.dart';
 

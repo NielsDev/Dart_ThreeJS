@@ -21,70 +21,172 @@ class Geometry extends EventDispatcher
     _obj["name"] = name;
   }
   
-  List get vertices => _obj["vertices"];
-  void set vertices(List vertices)
+  List<Vector3> get vertices
   {
-    _obj["vertices"] = new JsObject.jsify(vertices);
+    List<JsObject> list = _obj["vertices"];
+    List<Vector3> listVectors = [];
+    
+    for(int i = 0, l = list.length; i < l; i++)
+      listVectors.add(new Vector3.fromJsObject(list[i]));
+    
+    return listVectors;
+  }
+  void set vertices(List<Vector3> vertices)
+  {
+    List<JsObject> list = [];
+    
+    for(int i = 0, l = vertices.length; i < l; i++)
+      list.add(vertices[i]._obj);
+    
+    _obj["vertices"] = new JsObject.jsify(list);
   }
   
-  List get colors => _obj["colors"];
-  void set colors(List colors)
+  List<Color> get colors
   {
-    _obj["colors"] = new JsObject.jsify(colors);
+    List<JsObject> listJS = _obj["colors"];
+    List<Color> list = [];
+    
+    for(int i = 0, l = listJS.length; i < l; i++)
+      list.add(new Color.fromJsObject(listJS[i]));
+    
+    return list;
+  }
+  void set colors(List<Color> colors)
+  {
+    List<JsObject> list = [];
+    
+    for(int i = 0, l = colors.length; i < l; i++)
+      list.add(colors[i]._obj);
+    
+    _obj["colors"] = new JsObject.jsify(list);
   }
   
-  List get faces => _obj["faces"];
-  void set faces(List faces)
+  List<Face3> get faces
   {
-    _obj["faces"] = new JsObject.jsify(faces);
+    List<JsObject> list = _obj["faces"];
+    List<Face3> listFaces = [];
+    
+    for(int i = 0, l = list.length; i < l; i++)
+      listFaces.add(new Face3.fromJsObject(list[i]));
+      
+    return listFaces;
+  }
+  void set faces(List<Face3> faces)
+  {
+    List<JsObject> list = [];
+    
+    for(int i = 0, l = faces.length; i < l; i++)
+      list.add(faces[i]._obj);
+    
+    _obj["faces"] = new JsObject.jsify(list);
   }
   
-  List<List> get faceVertexUvs => _obj["faceVertexUvs"];
-  void set faceVertexUvs(List<List> faceVertexUvs)
+  List<List<Vector2>> get faceVertexUvs
   {
-    _obj["faceVertexUvs"] = new JsObject.jsify(faceVertexUvs);
+    List<List<JsObject>> list = _obj["faceVertexUvs"];
+    List<List<Vector2>> listFaceVertexUvs = [];
+    
+    for(int i = 0, il = list.length; i < il; i++)
+    {
+      List<JsObject> subListJS = list[i];
+      List<Vector2> subList = new List<Vector2>();
+      listFaceVertexUvs.add(subList);
+      
+      for(int j = 0, jl = subListJS.length; j < jl; j++)
+      {
+        subList.add(new Vector2.fromJsObject(subListJS[j]));
+      }
+    }
+    
+    return listFaceVertexUvs;
+  }
+  void set faceVertexUvs(List<List<Vector2>> faceVertexUvs)
+  {
+    List<List<JsObject>> list = [];
+    
+    for(int i = 0, il = faceVertexUvs.length; i < il; i++)
+    {
+      List<JsObject> subListJS = new List<JsObject>();
+      List<Vector2> subList = faceVertexUvs[i];
+      list.add(subListJS);
+      
+      for(int j = 0, jl = subList.length; j < jl; j++)
+      {
+        subListJS.add(subList[j]._obj);
+      }
+    }
+    
+    _obj["faceVertexUvs"] = new JsObject.jsify(list);
   }
   
-  List get morphTargets => _obj["morphTargets"];
-  void set morphTargets(List morphTargets)
+  List<Map> get morphTargets => _obj["morphTargets"];
+  void set morphTargets(List<Map> morphTargets)
   {
     _obj["morphTargets"] = new JsObject.jsify(morphTargets);
   }
   
-  List get morphColors => _obj["morphColors"];
-  void set morphColors(List morphColors)
+  List<Color> get morphColors
   {
-    _obj["morphColors"] = new JsObject.jsify(morphColors);
+    List<JsObject> listJS = _obj["morphColors"];
+    List<Color> list = [];
+    
+    for(int i = 0, l = listJS.length; i < l; i++)
+      list.add(new Color.fromJsObject(listJS[i]));
+    
+    return list;
+  }
+  void set morphColors(List<Color> morphColors)
+  {
+    List<JsObject> list = [];
+    
+    for(int i = 0, l = morphColors.length; i < l; i++)
+      list.add(morphColors[i]._obj);
+    
+    _obj["morphColors"] = new JsObject.jsify(list);
   }
   
-  List get morphNormals => _obj["morphNormals"];
-  void set morphNormals(List morphNormals)
+  List<Vector3> get morphNormals
   {
-    _obj["morphNormals"] = new JsObject.jsify(morphNormals);
+    List<JsObject> listJS = _obj["morphNormals"];
+    List<Vector3> list = [];
+    
+    for(int i = 0, l = listJS.length; i < l; i++)
+      list.add(new Vector3.fromJsObject(listJS[i]));
+    
+    return list;
+  }
+  void set morphNormals(List<Vector3> morphNormals)
+  {
+    List<JsObject> list = [];
+        
+    for(int i = 0, l = morphNormals.length; i < l; i++)
+      list.add(morphNormals[i]._obj);
+    
+    _obj["morphNormals"] = new JsObject.jsify(list);
   }
   
-  List get skinWeights => _obj["skinWeights"];
-  void set skinWeights(List skinWeights)
+  List<num> get skinWeights => _obj["skinWeights"];
+  void set skinWeights(List<num> skinWeights)
   {
     _obj["skinWeights"] = new JsObject.jsify(skinWeights);
   }
   
-  List get skinIndices => _obj["skinIndices"];
-  void set skinIndices(List skinIndices)
+  List<int> get skinIndices => _obj["skinIndices"];
+  void set skinIndices(List<int> skinIndices)
   {
     _obj["skinIndices"] = new JsObject.jsify(skinIndices);
   }
   
-  Object get boundingBox => _obj["boundingBox"];
-  void set boundingBox(Object boundingBox)
+  Box3 get boundingBox => new Box3.fromJsObject(_obj["boundingBox"]);
+  void set boundingBox(Box3 boundingBox)
   {
-    _obj["boundingBox"] = boundingBox;
+    _obj["boundingBox"] = boundingBox._obj;
   }
   
-  Object get boundingSphere => _obj["boundingSphere"];
-  void set boundingSphere(Object boundingSphere)
+  Sphere get boundingSphere => new Sphere.fromJsObject(_obj["boundingSphere"]);
+  void set boundingSphere(Sphere boundingSphere)
   {
-    _obj["boundingSphere"] = boundingSphere;
+    _obj["boundingSphere"] = boundingSphere._obj;
   }
   
   bool get hasTangents => _obj["hasTangents"];
@@ -147,8 +249,8 @@ class Geometry extends EventDispatcher
     _obj["buffersNeedUpdate"] = buffersNeedUpdate;
   }
   
-  List get lineDistances => _obj["lineDistances"];
-  void set lineDistances(List lineDistances)
+  List<num> get lineDistances => _obj["lineDistances"];
+  void set lineDistances(List<num> lineDistances)
   {
     _obj["lineDistances"] = new JsObject.jsify(lineDistances);
   }
@@ -156,7 +258,7 @@ class Geometry extends EventDispatcher
   
   // == METHODS ==
   
-  void applyMatrix(Object matrix) => _obj.callMethod("applyMatrix", [ matrix ]);
+  void applyMatrix(Matrix4 matrix) => _obj.callMethod("applyMatrix", [ matrix._obj ]);
   
   void computeFaceNormals() => _obj.callMethod("computeFaceNormals");
   
@@ -170,7 +272,7 @@ class Geometry extends EventDispatcher
   
   void computeBoundingSphere() => _obj.callMethod("computeBoundingSphere");
 
-  void merge(Geometry geometry, Object matrix, int materialIndexOffset) => _obj.callMethod("merge", [ geometry, matrix, materialIndexOffset ]);
+  void merge(Geometry geometry, Matrix4 matrix, int materialIndexOffset) => _obj.callMethod("merge", [ geometry._obj, matrix._obj, materialIndexOffset ]);
   
   void mergeVertices() => _obj.callMethod("mergeVertices");
   
