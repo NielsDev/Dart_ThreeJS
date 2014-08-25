@@ -61,6 +61,8 @@ part 'materials/mesh_depth_material.dart';
 part 'materials/mesh_face_material.dart';
 part 'materials/mesh_lambert_material.dart';
 part 'materials/mesh_phong_material.dart';
+part 'materials/line_basic_material.dart';
+part 'materials/line_dashed_material.dart';
 
 // Objects
 part 'objects/mesh.dart';
