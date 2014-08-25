@@ -57,4 +57,15 @@ class PointCloudMaterial extends Material
   {
     _obj["fog"] = fog;
   }
+  
+  
+  // == METHODS ==
+  
+  
+  PointCloudMaterial clone([PointCloudMaterial material])
+  {
+    JsObject cloned = _obj.callMethod("clone");
+    PointCloudMaterial clone = new PointCloudMaterial.fromJsObject(cloned);
+    return clone;
+  }
 }
