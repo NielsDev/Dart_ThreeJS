@@ -158,7 +158,7 @@ class Object3D extends EventDispatcher
   Matrix4 get matrixWorld => new Matrix4.fromJsObject(_obj["matrixWorld"]);
   void set matrixWorld(Matrix4 matrixWorld)
   {
-    _obj["matrixWorld"] = matrixWorld;
+    _obj["matrixWorld"] = matrixWorld._obj;
   }
   
   
