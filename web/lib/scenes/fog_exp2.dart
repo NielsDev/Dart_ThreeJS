@@ -22,6 +22,7 @@ class FogExp2 extends AbstractFog
   void set color(Color color)
   {
     _obj["color"] = color._obj;
+    _cache["color"] = color;
   }
   
   num get density => _obj["density"];

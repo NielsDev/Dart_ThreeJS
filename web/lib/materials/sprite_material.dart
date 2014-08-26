@@ -23,12 +23,14 @@ class SpriteMaterial extends Material
   void set map(Texture map)
   {
     _obj["map"] = map._obj;
+    _cache["map"] = map;
   }
   
   Vector2 get uvScale => ThreeBase._fromCache(this, Vector2, "uvScale");
   void set uvScale(Vector2 uvScale)
   {
     _obj["uvScale"] = uvScale._obj;
+    _cache["uvScale"] = uvScale;
   }
   
   num get sizeAttenuation => _obj["sizeAttenuation"];
@@ -41,12 +43,14 @@ class SpriteMaterial extends Material
   void set color(Color color)
   {
     _obj["color"] = color._obj;
+    _cache["color"] = color;
   }
   
   Vector2 get uvOffset => ThreeBase._fromCache(this, Vector2, "uvOffset");
   void set uvOffset(Vector2 uvOffset)
   {
     _obj["uvOffset"] = uvOffset._obj;
+    _cache["uvOffset"] = uvOffset;
   }
   
   bool get fog => _obj["fog"];
@@ -71,6 +75,7 @@ class SpriteMaterial extends Material
   void set alignment(Vector2 alignment)
   {
     _obj["alignment"] = alignment._obj;
+    _cache["alignment"] = alignment;
   }
   
   

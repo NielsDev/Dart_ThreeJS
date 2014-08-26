@@ -37,12 +37,14 @@ class BufferGeometry extends EventDispatcher
   void set boundingBox(Box3 boundingBox)
   {
     _obj["boundingBox"] = boundingBox._obj;
+    _cache["boundingBox"] = boundingBox;
   }
   
   Sphere get boundingSphere => ThreeBase._fromCache(this, Sphere, "boundingSphere");
   void set boundingSphere(Sphere boundingSphere)
   {
     _obj["boundingSphere"] = boundingSphere._obj;
+    _cache["boundingSphere"] = boundingSphere;
   }
   
   List<Map> get morphTargets => _obj["morphTargets"];

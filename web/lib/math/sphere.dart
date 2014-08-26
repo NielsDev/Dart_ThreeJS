@@ -15,8 +15,8 @@ class Sphere extends ThreeBase
   Vector3 get center => ThreeBase._fromCache(this, Vector3, "center");
   void set center(Vector3 center)
   {
-    JsObject centerJS = center._obj;
-    _obj["center"] = centerJS;
+    _obj["center"] = center._obj;
+    _cache["center"] = center;
   }
   
   num get radius => _obj["radius"];

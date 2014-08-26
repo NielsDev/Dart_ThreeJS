@@ -17,15 +17,15 @@ class Box3 extends ThreeBase
   Vector3 get min => ThreeBase._fromCache(this, Vector3, "min");
   void set min(Vector3 min)
   {
-    JsObject minJS = min._obj;
-    _obj["min"] = minJS;
+    _obj["min"] = min._obj;
+    _cache["min"] = min;
   }
   
   Vector3 get max => ThreeBase._fromCache(this, Vector3, "max");
   void set max(Vector3 max)
   {
-    JsObject maxJS = max._obj;
-    _obj["max"] = maxJS;
+    _obj["max"] = max._obj;
+    _cache["max"] = max;
   }
   
   

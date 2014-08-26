@@ -16,12 +16,14 @@ class Line3 extends ThreeBase
   void set start(Vector3 start)
   {
     _obj["start"] = start._obj;
+    _cache["start"] = start;
   }
   
   Vector3 get end => ThreeBase._fromCache(this, Vector3, "end");
   void set end(Vector3 end)
   {
     _obj["end"] = end._obj;
+    _cache["end"] = end;
   }
   
   

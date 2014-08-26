@@ -25,6 +25,7 @@ class Object3D extends EventDispatcher
   void set parent(Object3D parent)
   {
     _obj["parent"] = parent._obj;
+    _cache["parent"] = parent;
   }
   
   List<Object3D> get children
@@ -58,12 +59,14 @@ class Object3D extends EventDispatcher
   void set position(ThreeBase position)
   {
     _obj["position"] = position._obj;
+    _cache["position"] = position;
   }
   
   Euler get rotation => ThreeBase._fromCache(this, Euler, "rotation");
   void set rotation(Euler rotation)
   {
     _obj["rotation"] = rotation._obj;
+    _cache["rotation"] = rotation;
   }
   
   String get eulerOrder => _obj["eulerOrder"];
@@ -76,24 +79,28 @@ class Object3D extends EventDispatcher
   void set scale(Vector3 scale)
   {
     _obj["scale"] = scale._obj;
+    _cache["scale"] = scale;
   }
   
   Vector3 get up => ThreeBase._fromCache(this, Vector3, "up");
   void set up(Vector3 up)
   {
     _obj["up"] = up._obj;
+    _cache["up"] = up;
   }
   
   Matrix4 get matrix => ThreeBase._fromCache(this, Matrix4, "matrix");
   void set matrix(Matrix4 matrix)
   {
     _obj["matrix"] = matrix._obj;
+    _cache["matrix"] = matrix;
   }
   
   Quaternion get quaternion => ThreeBase._fromCache(this, Quaternion, "quaternion");
   void set quaternion(Quaternion quaternion)
   {
     _obj["quaternion"] = quaternion._obj;
+    _cache["quaternion"] = quaternion;
   }
   
   bool get useQuaternion => _obj["quaternion"];
@@ -154,6 +161,7 @@ class Object3D extends EventDispatcher
   void set matrixWorld(Matrix4 matrixWorld)
   {
     _obj["matrixWorld"] = matrixWorld._obj;
+    _cache["matrixWorld"] = matrixWorld;
   }
   
   

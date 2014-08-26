@@ -16,12 +16,14 @@ class Ray extends ThreeBase
   void set origin(Vector3 origin)
   {
     _obj["origin"] = origin._obj;
+    _cache["origin"] = origin;
   }
   
   Vector3 get direction => ThreeBase._fromCache(this, Vector3, "direction");
   void set direction(Vector3 direction)
   {
     _obj["direction"] = direction._obj;
+    _cache["direction"] = direction;
   }
   
   

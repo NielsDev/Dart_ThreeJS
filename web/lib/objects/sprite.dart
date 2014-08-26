@@ -16,6 +16,7 @@ class Sprite extends Object3D
   void set material(Material material)
   {
     _obj["material"] = material._obj;
+    _cache["material"] = material;
   }
   
   

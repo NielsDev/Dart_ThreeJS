@@ -18,6 +18,7 @@ class Raycaster extends ThreeBase
   void set ray(Ray ray)
   {
     _obj["ray"] = ray._obj;
+    _cache["ray"] = ray;
   }
   
   num get near => _obj["near"];

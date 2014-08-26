@@ -16,6 +16,7 @@ class SpotLight extends Light
   void set target(Object3D target)
   {
     _obj["target"] = target._obj;
+    _cache["target"] = target;
   }
   
   num get intensity => _obj["intensity"];

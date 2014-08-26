@@ -16,12 +16,14 @@ class AreaLight extends Light
   void set right(Vector3 right)
   {
     _obj["right"] = right._obj;
+    _cache["right"] = right;
   }
   
   Vector3 get normal => ThreeBase._fromCache(this, Vector3, "normal");
   void set normal(Vector3 normal)
   {
     _obj["normal"] = normal._obj;
+    _cache["normal"] = normal;
   }
   
   num get height => _obj["height"];

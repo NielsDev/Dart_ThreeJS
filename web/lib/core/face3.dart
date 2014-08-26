@@ -36,12 +36,14 @@ class Face3 extends ThreeBase
   void set normal(Vector3 normal)
   {
     _obj["normal"] = normal._obj;
+    _cache["normal"] = normal;
   }
   
   Color get color => ThreeBase._fromCache(this, Color, "color");
   void set color(Color color)
   {
     _obj["color"] = color._obj;
+    _cache["color"] = color;
   }
   
   List<Vector3> get vertexNormals

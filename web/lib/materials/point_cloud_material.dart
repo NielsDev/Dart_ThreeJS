@@ -32,6 +32,7 @@ class PointCloudMaterial extends Material
   void set map(Texture map)
   {
     _obj["map"] = map._obj;
+    _cache["map"] = map;
   }
   
   num get size => _obj["size"];

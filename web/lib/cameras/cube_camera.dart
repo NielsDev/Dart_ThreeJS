@@ -16,6 +16,7 @@ class CubeCamera extends Object3D
   void set renderTarget(WebGLRenderTarget renderTarget)
   {
     _obj["renderTarget"] = renderTarget._obj;
+    _cache["renderTarget"] = renderTarget;
   }
   
   

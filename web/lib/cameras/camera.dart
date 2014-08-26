@@ -15,12 +15,14 @@ class Camera extends Object3D
   void set matrixWorldInverse(Matrix4 matrixWorldInverse)
   {
     _obj["matrixWorldInverse"] = matrixWorldInverse._obj;
+    _cache["matrixWorldInverse"] = matrixWorldInverse;
   }
   
   Matrix4 get projectionMatrix => ThreeBase._fromCache(this, Matrix4, "projectionMatrix");
   void set projectionMatrix(Matrix4 projectionMatrix)
   {
     _obj["projectionMatrix"] = projectionMatrix._obj;
+    _cache["projectionMatrix"] = projectionMatrix;
   }
   
   

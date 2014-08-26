@@ -20,6 +20,7 @@ class MeshBasicMaterial extends Material
   void set color(Color color)
   {
     _obj["color"] = color._obj;
+    _cache["color"] = color;
   }
   
   bool get wireframe => _obj["wireframe"];
@@ -64,28 +65,71 @@ class MeshBasicMaterial extends Material
     _obj["fog"] = fog;
   }
   
-  Object get lightMap => _obj["lightMap"];
-  void set lightMap(Object lightMap)
+  Texture get lightMap
   {
-    _obj["lightMap"] = lightMap;
+    JsObject lightMapJS = _obj["lightMap"];
+    if(lightMapJS == null)
+      return null;
+    
+    return ThreeBase._fromCacheJS(this, Texture, lightMapJS, "lightMap");
+  }
+  void set lightMap(Texture lightMap)
+  {
+    if(lightMap == null)
+    {
+      _obj["lightMap"] = null;
+      return;
+    }
+    
+    _obj["lightMap"] = lightMap._obj;
+    _cache["lightMap"] = lightMap;
   }
   
-  Object get specularMap => _obj["specularMap"];
-  void set specularMap(Object specularMap)
+  Texture get specularMap
   {
-    _obj["specularMap"] = specularMap;
+    JsObject specularMapJS = _obj["specularMap"];
+    if(specularMapJS == null)
+      return null;
+    
+    return ThreeBase._fromCacheJS(this, Texture, specularMapJS, "specularMap");
+  }
+  void set specularMap(Texture specularMap)
+  {
+    if(specularMap == null)
+    {
+      _obj["specularMap"] = null;
+      return;
+    }
+    
+    _obj["specularMap"] = specularMap._obj;
+    _cache["specularMap"] = specularMap;
   }
   
-  Object get alphaMap => _obj["alphaMap"];
-  void set alphaMap(Object alphaMap)
+  Texture get alphaMap
   {
-    _obj["alphaMap"] = alphaMap;
+    JsObject alphaMapJS = _obj["alphaMap"];
+    if(alphaMapJS == null)
+      return null;
+    
+    return ThreeBase._fromCacheJS(this, Texture, alphaMapJS, "alphaMap");
+  }
+  void set alphaMap(Texture alphaMap)
+  {
+    if(alphaMap == null)
+    {
+      _obj["alphaMap"] = null;
+      return;
+    }
+    
+    _obj["alphaMap"] = alphaMap._obj;
+    _cache["alphaMap"] = alphaMap;
   }
   
-  Object get envMap => _obj["envMap"];
-  void set envMap(Object envMap)
+  CubeTexture get envMap => ThreeBase._fromCache(this, CubeTexture, "envMap");
+  void set envMap(CubeTexture envMap)
   {
-    _obj["envMap"] = envMap;
+    _obj["envMap"] = envMap._obj;
+    _cache["envMap"] = envMap;
   }
   
   bool get skinning => _obj["skinning"];
@@ -100,10 +144,24 @@ class MeshBasicMaterial extends Material
     _obj["morphTargets"] = morphTargets;
   }
   
-  Object get map => _obj["map"];
-  void set map(Object map)
+  Texture get map
   {
-    _obj["map"] = map;
+    JsObject mapJS = _obj["map"];
+    if(mapJS == null)
+      return null;
+    
+    return ThreeBase._fromCacheJS(this, Texture, mapJS, "map");
+  }
+  void set map(Texture map)
+  {
+    if(map == null)
+    {
+      _obj["map"] = null;
+      return;
+    }
+    
+    _obj["map"] = map._obj;
+    _cache["map"] = map;
   }
   
   int get combine => _obj["combine"];

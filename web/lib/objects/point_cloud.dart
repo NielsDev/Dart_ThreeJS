@@ -19,12 +19,14 @@ class PointCloud extends Object3D
   void set geometry(Geometry geometry)
   {
     _obj["geometry"] = geometry._obj;
+    _cache["geometry"] = geometry;
   }
   
   Material get material => ThreeBase._fromCache(this, Material, "material");
   void set material(Material material)
   {
     _obj["material"] = material._obj;
+    _cache["material"] = material;
   }
   
   bool get frustumCulled => _obj["frustumCulled"];

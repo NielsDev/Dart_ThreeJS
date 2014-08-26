@@ -26,24 +26,28 @@ class MeshPhongMaterial extends Material
   void set color(Color color)
   {
     _obj["color"] = color._obj;
+    _cache["color"] = color;
   }
   
   Color get ambient => ThreeBase._fromCache(this, Color, "ambient");
   void set ambient(Color ambient)
   {
     _obj["ambient"] = ambient._obj;
+    _cache["ambient"] = ambient;
   }
   
   Color get emmisive => ThreeBase._fromCache(this, Color, "emmisive");
   void set emmisive(Color emmisive)
   {
     _obj["emmisive"] = emmisive._obj;
+    _cache["emmisive"] = emmisive;
   }
   
   Color get specular => ThreeBase._fromCache(this, Color, "specular");
   void set specular(Color specular)
   {
     _obj["specular"] = specular._obj;
+    _cache["specular"] = specular;
   }
   
   int get shininess => _obj["shininess"];
@@ -100,7 +104,7 @@ class MeshPhongMaterial extends Material
     if(mapJS == null)
       return null;
     
-    return new Texture.fromJsObject(mapJS);
+    return ThreeBase._fromCacheJS(this, Texture, mapJS, "map");
   }
   void set map(Texture map)
   {
@@ -111,6 +115,7 @@ class MeshPhongMaterial extends Material
     }
     
     _obj["map"] = map._obj;
+    _cache["map"] = map;
   }
   
   Texture get lightMap
@@ -119,7 +124,7 @@ class MeshPhongMaterial extends Material
     if(lightMapJS == null)
       return null;
     
-    return new Texture.fromJsObject(lightMapJS);
+    return ThreeBase._fromCacheJS(this, Texture, lightMapJS, "lightMap");
   }
   void set lightMap(Texture lightMap)
   {
@@ -130,6 +135,7 @@ class MeshPhongMaterial extends Material
     }
     
     _obj["lightMap"] = lightMap._obj;
+    _cache["lightMap"] = lightMap;
   }
   
   Texture get specularMap
@@ -138,7 +144,7 @@ class MeshPhongMaterial extends Material
     if(specularMapJS == null)
       return null;
     
-    return new Texture.fromJsObject(specularMapJS);
+    return ThreeBase._fromCacheJS(this, Texture, specularMapJS, "specularMap");
   }
   void set specularMap(Texture specularMap)
   {
@@ -149,6 +155,7 @@ class MeshPhongMaterial extends Material
     }
     
     _obj["specularMap"] = specularMap._obj;
+    _cache["specularMap"] = specularMap;
   }
   
   Texture get alphaMap
@@ -157,7 +164,7 @@ class MeshPhongMaterial extends Material
     if(alphaMapJS == null)
       return null;
     
-    return new Texture.fromJsObject(alphaMapJS);
+    return ThreeBase._fromCacheJS(this, Texture, alphaMapJS, "alphaMap");
   }
   void set alphaMap(Texture alphaMap)
   {
@@ -168,12 +175,14 @@ class MeshPhongMaterial extends Material
     }
     
     _obj["alphaMap"] = alphaMap._obj;
+    _cache["alphaMap"] = alphaMap;
   }
   
   CubeTexture get envMap => ThreeBase._fromCache(this, CubeTexture, "envMap");
   void set envMap(CubeTexture envMap)
   {
     _obj["envMap"] = envMap._obj;
+    _cache["envMap"] = envMap;
   }
   
   num get reflectivity => _obj["reflectivity"];
@@ -210,6 +219,7 @@ class MeshPhongMaterial extends Material
   void set normalScale(Vector2 normalScale)
   {
     _obj["normalScale"] = normalScale._obj;
+    _cache["normalScale"] = normalScale;
   }
   
   bool get morphNormals => _obj["morphNormals"];
@@ -252,6 +262,7 @@ class MeshPhongMaterial extends Material
   void set wrapRGB(Vector3 wrapRGB)
   {
     _obj["wrapRGB"] = wrapRGB._obj;
+    _cache["wrapRGB"] = wrapRGB;
   }
 
   

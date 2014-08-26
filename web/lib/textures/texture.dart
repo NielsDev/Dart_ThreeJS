@@ -34,6 +34,7 @@ class Texture extends EventDispatcher
   void set mapping(TextureMapping mapping)
   {
     _obj["mapping"] = mapping._obj;
+    _cache["mapping"] = mapping;
   }
   
   int get wrapS => _obj["wrapS"];
@@ -88,12 +89,14 @@ class Texture extends EventDispatcher
   void set repeat(Vector2 repeat)
   {
     _obj["repeat"] = repeat._obj;
+    _cache["repeat"] = repeat;
   }
   
   Vector2 get offset => ThreeBase._fromCache(this, Vector2, "offset");
   void set offset(Vector2 offset)
   {
     _obj["offset"] = offset._obj;
+    _cache["offset"] = offset;
   }
   
   String get name => _obj["name"];

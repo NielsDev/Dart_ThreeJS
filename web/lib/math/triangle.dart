@@ -15,22 +15,22 @@ class Triangle extends ThreeBase
   Vector3 get a => ThreeBase._fromCache(this, Vector3, "a");
   void set a(Vector3 a)
   {
-    JsObject aJS = a._obj;
-    _obj["a"] = aJS;
+    _obj["a"] = a._obj;
+    _cache["a"] = a;
   }
   
   Vector3 get b => ThreeBase._fromCache(this, Vector3, "b");
   void set b(Vector3 b)
   {
-    JsObject bJS = b._obj;
-    _obj["b"] = bJS;
+    _obj["b"] = b._obj;
+    _cache["b"] = b;
   }
     
   Vector3 get c => ThreeBase._fromCache(this, Vector3, "c");
   void set c(Vector3 c)
   {
-    JsObject cJS = c._obj;
-    _obj["c"] = cJS;
+    _obj["c"] = c._obj;
+    _cache["c"] = c;
   }
   
   

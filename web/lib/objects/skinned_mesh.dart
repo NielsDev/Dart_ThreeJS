@@ -40,9 +40,10 @@ class SkinnedMesh extends Object3D
   }
   
   Matrix4 get identityMatrix => ThreeBase._fromCache(this, Matrix4, "identityMatrix");
-  void set identityMatrix(Matrix4 matrix)
+  void set identityMatrix(Matrix4 identityMatrix)
   {
-    _obj["identityMatrix"] = matrix._obj;
+    _obj["identityMatrix"] = identityMatrix._obj;
+    _cache["identityMatrix"] = identityMatrix;
   }
   
   bool get useVertexTexture => _obj["useVertexTexture"];

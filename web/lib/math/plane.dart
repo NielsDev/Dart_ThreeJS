@@ -16,6 +16,7 @@ class Plane extends ThreeBase
   void set normal(Vector3 normal)
   {
     _obj["normal"] = normal._obj;
+    _cache["normal"] = normal;
   }
   
   num get constant => _obj["constant"];

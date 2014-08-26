@@ -16,6 +16,7 @@ class DirectionalLight extends Light
   void set target(Object3D target)
   {
     _obj["target"] = target._obj;
+    _cache["target"] = target;
   }
   
   num get intensity => _obj["intensity"];
@@ -106,6 +107,7 @@ class DirectionalLight extends Light
   void set shadowCascadeOffset(Vector3 shadowCascadeOffset)
   {
     _obj["shadowCascadeOffset"] = shadowCascadeOffset;
+    _cache["shadowCascadeOffset"] = shadowCascadeOffset;
   }
   
   int get shadowCascadeCount => _obj["shadowCascadeCount"];

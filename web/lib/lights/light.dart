@@ -16,5 +16,6 @@ class Light extends Object3D
   void set color(Color color)
   {
     _obj["color"] = color._obj;
+    _cache["color"] = color;
   }
 }
