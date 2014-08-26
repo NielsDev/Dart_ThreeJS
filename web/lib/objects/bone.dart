@@ -18,7 +18,7 @@ class Bone extends Object3D
     _obj["skinMatrix"] = skinMatrix._obj;
   }
   
-  SkinnedMesh get skin => ThreeBase._fromCache(this, Matrix4, "skin");
+  SkinnedMesh get skin => ThreeBase._fromCache(this, SkinnedMesh, "skin");
   void set skin(SkinnedMesh skin)
   {
     _obj["skin"] = skin._obj;
