@@ -30,7 +30,7 @@ class Texture extends EventDispatcher
     _obj["image"] = image;
   }
   
-  TextureMapping get mapping => new TextureMapping.fromJsObject(_obj["mapping"]);
+  TextureMapping get mapping => ThreeBase._fromCache(this, TextureMapping, "mapping");
   void set mapping(TextureMapping mapping)
   {
     _obj["mapping"] = mapping._obj;
@@ -84,13 +84,13 @@ class Texture extends EventDispatcher
     _obj["needsUpdate"] = needsUpdate;
   }
   
-  Vector2 get repeat => new Vector2.fromJsObject(_obj["repeat"]);
+  Vector2 get repeat => ThreeBase._fromCache(this, Vector2, "repeat");
   void set repeat(Vector2 repeat)
   {
     _obj["repeat"] = repeat._obj;
   }
   
-  Vector2 get offset => new Vector2.fromJsObject(_obj["offset"]);
+  Vector2 get offset => ThreeBase._fromCache(this, Vector2, "offset");
   void set offset(Vector2 offset)
   {
     _obj["offset"] = offset._obj;

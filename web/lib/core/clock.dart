@@ -4,8 +4,10 @@ class Clock extends ThreeBase
 {
   Clock([bool autoStart])
   {
-    bool autoStartParam = (autoStart == null) ? true : autoStart;
-    _obj = new JsObject(context["THREE"]["Clock"], [ autoStartParam ]);
+    if(autoStart == null)
+      _obj = new JsObject(context["THREE"]["Clock"]);
+    else
+      _obj = new JsObject(context["THREE"]["Clock"], [ autoStart ]);
   }
   
   Clock.fromJsObject(JsObject obj)

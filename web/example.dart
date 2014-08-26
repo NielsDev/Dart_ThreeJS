@@ -15,7 +15,7 @@ void init()
   THREE.BoxGeometry geometry = new THREE.BoxGeometry(200, 200, 200);
   THREE.MeshBasicMaterial material = new THREE.MeshBasicMaterial({ "color": 0xFF0000, "wireframe": true });
   mesh = new THREE.Mesh(geometry, material);
-  
+
   scene.add(mesh);
   
   renderer = new THREE.CanvasRenderer();

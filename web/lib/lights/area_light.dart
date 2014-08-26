@@ -12,13 +12,13 @@ class AreaLight extends Light
     _obj = obj;
   }
   
-  Vector3 get right => new Vector3.fromJsObject(_obj["right"]);
+  Vector3 get right => ThreeBase._fromCache(this, Vector3, "right");
   void set right(Vector3 right)
   {
     _obj["right"] = right._obj;
   }
   
-  Vector3 get normal => new Vector3.fromJsObject(_obj["normal"]);
+  Vector3 get normal => ThreeBase._fromCache(this, Vector3, "normal");
   void set normal(Vector3 normal)
   {
     _obj["normal"] = normal._obj;

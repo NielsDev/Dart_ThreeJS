@@ -28,7 +28,7 @@ class PointCloudMaterial extends Material
     _obj["color"] = color;
   }
   
-  Texture get map => new Texture.fromJsObject(_obj["map"]);
+  Texture get map => ThreeBase._fromCache(this, Texture, "map");
   void set map(Texture map)
   {
     _obj["map"] = map._obj;

@@ -12,7 +12,7 @@ class DirectionalLight extends Light
     _obj = obj;
   }
   
-  Object3D get target => new Object3D.fromJsObject(_obj["target"]);
+  Object3D get target => ThreeBase._fromCache(this, Object3D, "target");
   void set target(Object3D target)
   {
     _obj["target"] = target._obj;
@@ -102,7 +102,11 @@ class DirectionalLight extends Light
     _obj["shadowCascade"] = shadowCascade;
   }
   
-  Vector3 get shadowCascadeOffset => new Vector3.fromJsObject(_obj["shadowCascadeOffset"]);
+  Vector3 get shadowCascadeOffset => ThreeBase._fromCache(this, Vector3, "shadowCascadeOffset");
+  void set shadowCascadeOffset(Vector3 shadowCascadeOffset)
+  {
+    _obj["shadowCascadeOffset"] = shadowCascadeOffset;
+  }
   
   int get shadowCascadeCount => _obj["shadowCascadeCount"];
   void set shadowCascadeCount(int shadowCascadeCount)

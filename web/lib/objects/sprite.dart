@@ -12,7 +12,7 @@ class Sprite extends Object3D
     _obj = obj;
   }
   
-  Material get material => new Material.fromJsObject(_obj["material"]);
+  Material get material => ThreeBase._fromCache(this, Material, "material");
   void set material(Material material)
   {
     _obj["material"] = material._obj;

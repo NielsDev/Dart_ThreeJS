@@ -12,7 +12,7 @@ class SpotLight extends Light
     _obj = obj;
   }
   
-  Object3D get target => new Object3D.fromJsObject(_obj["target"]);
+  Object3D get target => ThreeBase._fromCache(this, Object3D, "target");
   void set target(Object3D target)
   {
     _obj["target"] = target._obj;

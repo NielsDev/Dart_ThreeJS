@@ -8,9 +8,9 @@ class RingGeometry extends Geometry
     
     if(innerRadius != null)   args.add(innerRadius);
     if(outerRadius != null)   args.add(outerRadius);
-    if(thetaSegments != null)   args.add(thetaSegments);
+    if(thetaSegments != null) args.add(thetaSegments);
     if(phiSegments != null)   args.add(phiSegments);
-    if(thetaStart != null)   args.add(thetaStart);
+    if(thetaStart != null)    args.add(thetaStart);
     if(thetaLength != null)   args.add(thetaLength);
     
     _obj = new JsObject(context["THREE"]["RingGeometry"], args);

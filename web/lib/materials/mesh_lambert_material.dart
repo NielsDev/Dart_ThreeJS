@@ -22,19 +22,19 @@ class MeshLambertMaterial extends Material
     _obj = obj;
   }
   
-  Color get color => new Color.fromJsObject(_obj["color"]);
+  Color get color => ThreeBase._fromCache(this, Color, "color");
   void set color(Color color)
   {
     _obj["color"] = color._obj;
   }
   
-  Color get ambient => new Color.fromJsObject(_obj["ambient"]);
+  Color get ambient => ThreeBase._fromCache(this, Color, "ambient");
   void set ambient(Color ambient)
   {
     _obj["ambient"] = ambient._obj;
   }
   
-  Color get emmisive => new Color.fromJsObject(_obj["emmisive"]);
+  Color get emmisive => ThreeBase._fromCache(this, Color, "emmisive");
   void set emmisive(Color emmisive)
   {
     _obj["emmisive"] = emmisive._obj;
@@ -158,7 +158,7 @@ class MeshLambertMaterial extends Material
     _obj["alphaMap"] = alphaMap._obj;
   }
   
-  CubeTexture get envMap => new CubeTexture.fromJsObject(_obj["envMap"]);
+  CubeTexture get envMap => ThreeBase._fromCache(this, CubeTexture, "envMap");
   void set envMap(CubeTexture envMap)
   {
     _obj["envMap"] = envMap._obj;
@@ -194,7 +194,7 @@ class MeshLambertMaterial extends Material
     _obj["morphTargets"] = morphTargets;
   }
   
-  Vector3 get wrapRGB => new Vector3.fromJsObject(_obj["wrapRGB"]);
+  Vector3 get wrapRGB => ThreeBase._fromCache(this, Vector3, "wrapRGB");
   void set wrapRGB(Vector3 wrapRGB)
   {
     _obj["wrapRGB"] = wrapRGB._obj;

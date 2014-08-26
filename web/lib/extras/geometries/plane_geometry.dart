@@ -6,8 +6,8 @@ class PlaneGeometry extends Geometry
   {
     List args = [ width, height ];
     
-    if(widthSegments == null)   args.add(widthSegments);
-    if(heightSegments == null)  args.add(heightSegments);
+    if(widthSegments != null)   args.add(widthSegments);
+    if(heightSegments != null)  args.add(heightSegments);
     
     _obj = new JsObject(context["THREE"]["PlaneGeometry"], args);
   }

@@ -12,13 +12,13 @@ class Ray extends ThreeBase
     _obj = obj;
   }
   
-  Vector3 get origin => new Vector3.fromJsObject(_obj["origin"]);
+  Vector3 get origin => ThreeBase._fromCache(this, Vector3, "origin");
   void set origin(Vector3 origin)
   {
     _obj["origin"] = origin._obj;
   }
   
-  Vector3 get direction => new Vector3.fromJsObject(_obj["direction"]);
+  Vector3 get direction => ThreeBase._fromCache(this, Vector3, "direction");
   void set direction(Vector3 direction)
   {
     _obj["direction"] = direction._obj;

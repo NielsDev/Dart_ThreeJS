@@ -19,13 +19,13 @@ class SpriteMaterial extends Material
     _obj = obj;
   }
   
-  Texture get map => new Texture.fromJsObject(_obj["map"]);
+  Texture get map => ThreeBase._fromCache(this, Texture, "map");
   void set map(Texture map)
   {
     _obj["map"] = map._obj;
   }
   
-  Vector2 get uvScale => new Vector2.fromJsObject(_obj["uvScale"]);
+  Vector2 get uvScale => ThreeBase._fromCache(this, Vector2, "uvScale");
   void set uvScale(Vector2 uvScale)
   {
     _obj["uvScale"] = uvScale._obj;
@@ -37,13 +37,13 @@ class SpriteMaterial extends Material
     _obj["sizeAttenuation"] = sizeAttenuation;
   }
   
-  Color get color => new Color.fromJsObject(_obj["color"]);
+  Color get color => ThreeBase._fromCache(this, Color, "color");
   void set color(Color color)
   {
     _obj["color"] = color._obj;
   }
   
-  Vector2 get uvOffset => new Vector2.fromJsObject(_obj["uvOffset"]);
+  Vector2 get uvOffset => ThreeBase._fromCache(this, Vector2, "uvOffset");
   void set uvOffset(Vector2 uvOffset)
   {
     _obj["uvOffset"] = uvOffset._obj;
@@ -67,7 +67,7 @@ class SpriteMaterial extends Material
     _obj["scaleByViewport"] = scaleByViewport;
   }
   
-  Vector2 get alignment => new Vector2.fromJsObject(_obj["alignment"]);
+  Vector2 get alignment => ThreeBase._fromCache(this, Vector2, "alignment");
   void set alignment(Vector2 alignment)
   {
     _obj["alignment"] = alignment._obj;

@@ -12,8 +12,7 @@ class CubeCamera extends Object3D
     _obj = obj;
   }
   
-  // There won't be a problem here because WebGLRenderTargetCube extends WebGLRenderTarget
-  WebGLRenderTarget get renderTarget => new WebGLRenderTarget.fromJsObject(_obj["renderTarget"]);
+  WebGLRenderTarget get renderTarget => ThreeBase._fromCache(this, WebGLRenderTarget, "renderTarget");
   void set renderTarget(WebGLRenderTarget renderTarget)
   {
     _obj["renderTarget"] = renderTarget._obj;

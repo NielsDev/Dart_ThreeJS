@@ -12,13 +12,13 @@ class Line3 extends ThreeBase
     _obj = obj;
   }
   
-  Vector3 get start => new Vector3.fromJsObject(_obj["start"]);
+  Vector3 get start => ThreeBase._fromCache(this, Vector3, "start");
   void set start(Vector3 start)
   {
     _obj["start"] = start._obj;
   }
   
-  Vector3 get end => new Vector3.fromJsObject(_obj["end"]);
+  Vector3 get end => ThreeBase._fromCache(this, Vector3, "end");
   void set end(Vector3 end)
   {
     _obj["end"] = end._obj;

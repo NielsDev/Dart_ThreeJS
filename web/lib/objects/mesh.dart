@@ -15,13 +15,13 @@ class Mesh extends Object3D
     _obj = obj;
   }
   
-  Geometry get geometry => new Geometry.fromJsObject(_obj["geometry"]);
+  Geometry get geometry => ThreeBase._fromCache(this, Geometry, "geometry");
   void set geometry(Geometry geometry)
   {
     _obj["geometry"] = geometry._obj;
   }
   
-  Material get material => new Material.fromJsObject(_obj["material"]);
+  Material get material => ThreeBase._fromCache(this, Material, "material");
   void set material(Material material)
   {
     _obj["material"] = material._obj;

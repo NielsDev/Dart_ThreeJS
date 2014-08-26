@@ -32,13 +32,13 @@ class Face3 extends ThreeBase
     _obj["c"] = c;
   }
   
-  Vector3 get normal => new Vector3.fromJsObject(_obj["normal"]);
+  Vector3 get normal => ThreeBase._fromCache(this, Vector3, "normal");
   void set normal(Vector3 normal)
   {
     _obj["normal"] = normal._obj;
   }
   
-  Color get color => new Color.fromJsObject(_obj["color"]);
+  Color get color => ThreeBase._fromCache(this, Color, "color");
   void set color(Color color)
   {
     _obj["color"] = color._obj;

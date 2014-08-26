@@ -18,7 +18,7 @@ class Fog extends AbstractFog
     _obj["name"] = name;
   }
   
-  Color get color => new Color.fromJsObject(_obj["color"]);
+  Color get color => ThreeBase._fromCache(this, Color, "color");
   void set color(Color color)
   {
     _obj["color"] = color._obj;

@@ -11,13 +11,13 @@ class Camera extends Object3D
     _obj = obj;
   }
   
-  Matrix4 get matrixWorldInverse => new Matrix4.fromJsObject(_obj["matrixWorldInverse"]);
+  Matrix4 get matrixWorldInverse => ThreeBase._fromCache(this, Matrix4, "matrixWorldInverse");
   void set matrixWorldInverse(Matrix4 matrixWorldInverse)
   {
     _obj["matrixWorldInverse"] = matrixWorldInverse._obj;
   }
   
-  Matrix4 get projectionMatrix => new Matrix4.fromJsObject(_obj["projectionMatrix"]);
+  Matrix4 get projectionMatrix => ThreeBase._fromCache(this, Matrix4, "projectionMatrix");
   void set projectionMatrix(Matrix4 projectionMatrix)
   {
     _obj["projectionMatrix"] = projectionMatrix._obj;

@@ -21,12 +21,7 @@ class Object3D extends EventDispatcher
     _obj["name"] = name;
   }
   
-  Object3D get parent
-  {
-    Object3D obj = new Object3D();
-    obj._obj = _obj["parent"];
-    return obj;
-  }
+  Object3D get parent => ThreeBase._fromCache(this, Object3D, "parent");
   void set parent(Object3D parent)
   {
     _obj["parent"] = parent._obj;
@@ -59,13 +54,13 @@ class Object3D extends EventDispatcher
     _obj["children"] = new JsObject.jsify(list);
   }
   
-  Vector3 get position => new Vector3.fromJsObject(_obj["position"]);
-  void set position(Vector3 position)
+  Vector3 get position => ThreeBase._fromCache(this, Vector3, "position");
+  void set position(ThreeBase position)
   {
     _obj["position"] = position._obj;
   }
   
-  Euler get rotation => new Euler.fromJsObject(_obj["rotation"]);
+  Euler get rotation => ThreeBase._fromCache(this, Euler, "rotation");
   void set rotation(Euler rotation)
   {
     _obj["rotation"] = rotation._obj;
@@ -77,25 +72,25 @@ class Object3D extends EventDispatcher
     _obj["eulerOrder"] = eulerOrder;
   }
   
-  Vector3 get scale => new Vector3.fromJsObject(_obj["scale"]);
+  Vector3 get scale => ThreeBase._fromCache(this, Vector3, "scale");
   void set scale(Vector3 scale)
   {
     _obj["scale"] = scale._obj;
   }
   
-  Vector3 get up => new Vector3.fromJsObject(_obj["up"]);
+  Vector3 get up => ThreeBase._fromCache(this, Vector3, "up");
   void set up(Vector3 up)
   {
     _obj["up"] = up._obj;
   }
   
-  Matrix4 get matrix => new Matrix4.fromJsObject(_obj["matrix"]);
+  Matrix4 get matrix => ThreeBase._fromCache(this, Matrix4, "matrix");
   void set matrix(Matrix4 matrix)
   {
     _obj["matrix"] = matrix._obj;
   }
   
-  Quaternion get quaternion => new Quaternion.fromJsObject(_obj["quaternion"]);
+  Quaternion get quaternion => ThreeBase._fromCache(this, Quaternion, "quaternion");
   void set quaternion(Quaternion quaternion)
   {
     _obj["quaternion"] = quaternion._obj;
@@ -155,7 +150,7 @@ class Object3D extends EventDispatcher
     _obj["userData"] = new JsObject.jsify(userData);
   }
   
-  Matrix4 get matrixWorld => new Matrix4.fromJsObject(_obj["matrixWorld"]);
+  Matrix4 get matrixWorld => ThreeBase._fromCache(this, Matrix4, "matrixWorld");
   void set matrixWorld(Matrix4 matrixWorld)
   {
     _obj["matrixWorld"] = matrixWorld._obj;
@@ -167,19 +162,43 @@ class Object3D extends EventDispatcher
   
   void applyMatrix(Matrix4 matrix) => _obj.callMethod("applyMatrix", [ matrix._obj ]);
   
-  void translateX(num distance) => _obj.callMethod("translateX", [ distance ]);
+  Object3D translateX(num distance)
+  {
+    _obj.callMethod("translateX", [ distance ]);
+    return this;
+  }
   
-  void translateY(num distance) => _obj.callMethod("translateY", [ distance ]);
+  Object3D translateY(num distance)
+  {
+    _obj.callMethod("translateY", [ distance ]);
+    return this;
+  }
   
-  void translateZ(num distance) => _obj.callMethod("translateZ", [ distance ]);
+  Object3D translateZ(num distance)
+  {
+    _obj.callMethod("translateZ", [ distance ]);
+    return this;
+  }
   
-  void localToWorld(Vector3 vector) => _obj.callMethod("localToWorld", [ vector._obj ]);
+  Vector3 localToWorld(Vector3 vector)
+  {
+    _obj.callMethod("localToWorld", [ vector._obj ]);
+    return vector;
+  }
   
-  void worldToLocal(Vector3 vector) => _obj.callMethod("worldToLocal", [ vector._obj ]);
+  Vector3 worldToLocal(Vector3 vector)
+  {
+    _obj.callMethod("worldToLocal", [ vector._obj ]);
+    return vector;
+  }
   
   void lookAt(Vector3 vector) => _obj.callMethod("lookAt", [ vector._obj ]);
   
-  void add(Object3D object) => _obj.callMethod("add", [ object._obj ]);
+  Object3D add(Object3D object)
+  {
+    _obj.callMethod("add", [ object._obj ]);
+    return this;
+  }
   
   void traverse(Function callback)
   {
@@ -221,7 +240,15 @@ class Object3D extends EventDispatcher
     return new Object3D.fromJsObject(objectJS);
   }
   
-  void translateOnAxis(Vector3 axis, num distance) => _obj.callMethod("translateOnAxis", [ axis._obj, distance ]);
+  Object3D translateOnAxis(Vector3 axis, num distance)
+  {
+    _obj.callMethod("translateOnAxis", [ axis._obj, distance ]);
+    return this;
+  }
   
-  void rotateOnAxis(Vector3 axis, num distance) => _obj.callMethod("rotateOnAxis", [ axis._obj, distance ]);
+  Object3D rotateOnAxis(Vector3 axis, num distance)
+  {
+    _obj.callMethod("rotateOnAxis", [ axis._obj, distance ]);
+    return this;
+  }
 }

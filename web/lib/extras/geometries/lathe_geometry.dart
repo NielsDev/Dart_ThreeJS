@@ -11,9 +11,9 @@ class LatheGeometry extends Geometry
     
     List args = [ list ];
     
-    if(segments == null)    args.add(segments);
-    if(phiStart == null)    args.add(phiStart);
-    if(phiLength == null)   args.add(phiLength);
+    if(segments != null)    args.add(segments);
+    if(phiStart != null)    args.add(phiStart);
+    if(phiLength != null)   args.add(phiLength);
     
     _obj = new JsObject(context["THREE"]["LatheGeometry"], args);
   }

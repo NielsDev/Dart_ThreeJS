@@ -39,7 +39,7 @@ class SkinnedMesh extends Object3D
     _obj["bones"] = new JsObject.jsify(list);
   }
   
-  Matrix4 get identityMatrix => new Matrix4.fromJsObject(_obj["identityMatrix"]);
+  Matrix4 get identityMatrix => ThreeBase._fromCache(this, Matrix4, "identityMatrix");
   void set identityMatrix(Matrix4 matrix)
   {
     _obj["identityMatrix"] = matrix._obj;

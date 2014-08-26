@@ -14,7 +14,7 @@ class Raycaster extends ThreeBase
     _obj = obj;
   }
   
-  Ray get ray => new Ray.fromJsObject(_obj["ray"]);
+  Ray get ray => ThreeBase._fromCache(this, Ray, "ray");
   void set ray(Ray ray)
   {
     _obj["ray"] = ray._obj;

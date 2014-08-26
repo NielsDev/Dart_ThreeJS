@@ -33,13 +33,13 @@ class BufferGeometry extends EventDispatcher
     _obj["offsets"] = new JsObject.jsify(offsets);
   }
   
-  Box3 get boundingBox => new Box3.fromJsObject(_obj["boundingBox"]);
+  Box3 get boundingBox => ThreeBase._fromCache(this, Box3, "boundingBox");
   void set boundingBox(Box3 boundingBox)
   {
     _obj["boundingBox"] = boundingBox._obj;
   }
   
-  Sphere get boundingSphere => new Sphere.fromJsObject(_obj["boundingSphere"]);
+  Sphere get boundingSphere => ThreeBase._fromCache(this, Sphere, "boundingSphere");
   void set boundingSphere(Sphere boundingSphere)
   {
     _obj["boundingSphere"] = boundingSphere._obj;

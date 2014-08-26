@@ -5,6 +5,9 @@ import 'dart:js';
 import 'dart:typed_data';
 import 'dart:web_gl';
 
+@MirrorsUsed(targets: const [], symbols: "fromJsObject")
+import 'dart:mirrors';
+
 // ThreeBase object
 part 'threebase.dart';
 

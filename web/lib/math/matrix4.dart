@@ -25,6 +25,10 @@ class Matrix4 extends ThreeBase
     _obj["elements"] = elements;
   }
   
+  
+  // == METHODS ==
+  
+  
   Matrix4 set(num n11, num n12, num n13, num n14, num n21, num n22, num n23, num n24, num n31, num n32, num n33, num n34, num n41, num n42, num n43, num n44)
   {
     _obj.callMethod("set", [ n11, n12, n13, n14, n21, n22, n23, n24, n31, n32, n33, n34, n41, n42, n43, n44 ]);

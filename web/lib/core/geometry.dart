@@ -43,13 +43,16 @@ class Geometry extends EventDispatcher
   
   List<Color> get colors
   {
-    List<JsObject> listJS = _obj["colors"];
-    List<Color> list = [];
+    List<JsObject> list = _obj["colors"];
+    List<Color> listColors = [];
     
-    for(int i = 0, l = listJS.length; i < l; i++)
-      list.add(new Color.fromJsObject(listJS[i]));
+    for(int i = 0, l = list.length; i < l; i++)
+    {
+      JsObject obj = list[i];
+      listColors.add(ThreeBase._fromCacheJS(this, Color, list[i], "colors." + list[i]["uuid"]));
+    }
     
-    return list;
+    return listColors;
   }
   void set colors(List<Color> colors)
   {
@@ -177,13 +180,13 @@ class Geometry extends EventDispatcher
     _obj["skinIndices"] = new JsObject.jsify(skinIndices);
   }
   
-  Box3 get boundingBox => new Box3.fromJsObject(_obj["boundingBox"]);
+  Box3 get boundingBox => ThreeBase._fromCache(this, Box3, "boundingBox");
   void set boundingBox(Box3 boundingBox)
   {
     _obj["boundingBox"] = boundingBox._obj;
   }
   
-  Sphere get boundingSphere => new Sphere.fromJsObject(_obj["boundingSphere"]);
+  Sphere get boundingSphere => ThreeBase._fromCache(this, Sphere, "boundingSphere");
   void set boundingSphere(Sphere boundingSphere)
   {
     _obj["boundingSphere"] = boundingSphere._obj;

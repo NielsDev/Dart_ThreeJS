@@ -14,19 +14,23 @@ class Box3 extends ThreeBase
     _obj = obj;
   }
   
-  Vector3 get min => new Vector3.fromJsObject(_obj["min"]);
+  Vector3 get min => ThreeBase._fromCache(this, Vector3, "min");
   void set min(Vector3 min)
   {
     JsObject minJS = min._obj;
     _obj["min"] = minJS;
   }
   
-  Vector3 get max => new Vector3.fromJsObject(_obj["max"]);
+  Vector3 get max => ThreeBase._fromCache(this, Vector3, "max");
   void set max(Vector3 max)
   {
     JsObject maxJS = max._obj;
     _obj["max"] = maxJS;
   }
+  
+  
+  // == METHODS ==
+  
   
   Box3 set(Vector2 min, Vector2 max)
   {
