@@ -47,10 +47,7 @@ class Geometry extends EventDispatcher
     List<Color> listColors = [];
     
     for(int i = 0, l = list.length; i < l; i++)
-    {
-      JsObject obj = list[i];
-      listColors.add(ThreeBase._fromCacheJS(this, Color, list[i], "colors." + list[i]["uuid"]));
-    }
+      listColors.add(new Color.fromJsObject(list[i]));
     
     return listColors;
   }
