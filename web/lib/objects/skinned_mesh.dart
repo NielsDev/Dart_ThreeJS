@@ -22,10 +22,10 @@ class SkinnedMesh extends Object3D
   List<Bone> get bones
   {
     List<JsObject> list = _obj["bones"];
-    ThreeObjectList<Bone> listBones = [];
+    ThreeObjectList<Bone> listBones = new ThreeObjectList<Bone>(list);
     
     for(int i = 0, l = list.length; i < l; i++)
-      listBones.add(new Bone.fromJsObject(list[i]));
+      listBones.addNoJS(new Bone.fromJsObject(list[i]));
     
     return listBones;
   }

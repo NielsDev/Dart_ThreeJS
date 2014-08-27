@@ -3,8 +3,10 @@ part of ThreeJSWrapper;
 class ThreeObjectList<T extends ThreeObject> extends ListBase<T>
 {
   // Reference to the JS object
-  List<JsObject> _innerListJS = new List<JsObject>();
+  List<JsObject> _innerListJS;
   List<T> _innerList = new List<T>();
+  
+  ThreeObjectList(this._innerListJS);
   
   int get length => _innerList.length;
   void set length(int length)
@@ -21,6 +23,11 @@ class ThreeObjectList<T extends ThreeObject> extends ListBase<T>
   ThreeObject operator[](int index)
   {
     return _innerList[index];
+  }
+  
+  void addNoJS(T value)
+  {
+    _innerList.add(value);
   }
   
   void add(T value)

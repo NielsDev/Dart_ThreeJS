@@ -15,10 +15,10 @@ class Frustum extends ThreeObject
   List<Plane> get planes
   {
     List<JsObject> list = _obj["planes"];
-    ThreeObjectList<Plane> planeList = [];
+    ThreeObjectList<Plane> planeList = new ThreeObjectList<Plane>(list);
     
     for(int i = 0, l = list.length; i < l; i++)
-      planeList.add(new Plane.fromJsObject(list[i]));
+      planeList.addNoJS(new Plane.fromJsObject(list[i]));
     
     return planeList;
   }

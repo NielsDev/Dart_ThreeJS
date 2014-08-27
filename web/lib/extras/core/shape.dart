@@ -18,10 +18,10 @@ class Shape extends Path
   List<CurvePath> get holes
   {
     List<JsObject> list = _obj["holes"];
-    ThreeObjectList<CurvePath> listHoles = [];
+    ThreeObjectList<CurvePath> listHoles = new ThreeObjectList<CurvePath>(list);
     
     for(int i = 0, l = list.length; i < l; i++)
-      listHoles.add(new CurvePath.fromJsObject(list[i]));
+      listHoles.addNoJS(new CurvePath.fromJsObject(list[i]));
     
     return listHoles;
   }

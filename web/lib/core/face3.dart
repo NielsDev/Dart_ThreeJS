@@ -51,10 +51,10 @@ class Face3 extends ThreeObject
   List<Vector3> get vertexNormals
   {
     List<JsObject> list = _obj["vertexNormals"];
-    ThreeObjectList<Vector3> vectorList = [];
+    ThreeObjectList<Vector3> vectorList = new ThreeObjectList<Vector3>(list);
     
     for(int i = 0, l = list.length; i < l; i++)
-      vectorList.add(new Vector3.fromJsObject(list[i]));
+      vectorList.addNoJS(new Vector3.fromJsObject(list[i]));
     
     return vectorList;
   }
@@ -71,10 +71,10 @@ class Face3 extends ThreeObject
   List<Color> get vertexColors
   {
     List<JsObject> list = _obj["vertexColors"];
-    ThreeObjectList<Color> colorList = [];
+    ThreeObjectList<Color> colorList = new ThreeObjectList<Color>(list);
     
     for(int i = 0, l = list.length; i < l; i++)
-      colorList.add(new Color.fromJsObject(list[i]));
+      colorList.addNoJS(new Color.fromJsObject(list[i]));
     
     return colorList;
   }
@@ -91,10 +91,10 @@ class Face3 extends ThreeObject
   List<Vector4> get vertexTangents
   {
     List<JsObject> list = _obj["vertexTangents"];
-    ThreeObjectList<Vector4> vectorList = [];
+    ThreeObjectList<Vector4> vectorList = new ThreeObjectList<Vector4>(list);
     
     for(int i = 0, l = list.length; i < l; i++)
-      vectorList.add(new Vector4.fromJsObject(list[i]));
+      vectorList.addNoJS(new Vector4.fromJsObject(list[i]));
     
     return vectorList;
   }

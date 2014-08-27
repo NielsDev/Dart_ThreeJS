@@ -24,10 +24,10 @@ class Geometry extends EventDispatcher
   List<Vector3> get vertices
   {
     List<JsObject> list = _obj["vertices"];
-    ThreeObjectList<Vector3> listVectors = [];
+    ThreeObjectList<Vector3> listVectors = new ThreeObjectList<Vector3>(list);
     
     for(int i = 0, l = list.length; i < l; i++)
-      listVectors.add(new Vector3.fromJsObject(list[i]));
+      listVectors.addNoJS(new Vector3.fromJsObject(list[i]));
     
     return listVectors;
   }
@@ -44,10 +44,10 @@ class Geometry extends EventDispatcher
   List<Color> get colors
   {
     List<JsObject> list = _obj["colors"];
-    ThreeObjectList<Color> listColors = [];
+    ThreeObjectList<Color> listColors = new ThreeObjectList<Color>(list);
     
     for(int i = 0, l = list.length; i < l; i++)
-      listColors.add(new Color.fromJsObject(list[i]));
+      listColors.addNoJS(new Color.fromJsObject(list[i]));
     
     return listColors;
   }
@@ -64,10 +64,10 @@ class Geometry extends EventDispatcher
   List<Face3> get faces
   {
     List<JsObject> list = _obj["faces"];
-    ThreeObjectList<Face3> listFaces = [];
+    ThreeObjectList<Face3> listFaces = new ThreeObjectList<Face3>(list);
     
     for(int i = 0, l = list.length; i < l; i++)
-      listFaces.add(new Face3.fromJsObject(list[i]));
+      listFaces.addNoJS(new Face3.fromJsObject(list[i]));
     
     return listFaces;
   }
@@ -89,12 +89,12 @@ class Geometry extends EventDispatcher
     for(int i = 0, il = list.length; i < il; i++)
     {
       List<JsObject> subListJS = list[i];
-      ThreeObjectList<Vector2> subList = [];
+      ThreeObjectList<Vector2> subList = new ThreeObjectList<Vector2>(subListJS);
       listFaceVertexUvs.add(subList);
       
       for(int j = 0, jl = subListJS.length; j < jl; j++)
       {
-        subList.add(new Vector2.fromJsObject(subListJS[j]));
+        subList.addNoJS(new Vector2.fromJsObject(subListJS[j]));
       }
     }
     
@@ -128,10 +128,10 @@ class Geometry extends EventDispatcher
   List<Color> get morphColors
   {
     List<JsObject> listJS = _obj["morphColors"];
-    ThreeObjectList<Color> list = [];
+    ThreeObjectList<Color> list = new ThreeObjectList<Color>(listJS);
     
     for(int i = 0, l = listJS.length; i < l; i++)
-      list.add(new Color.fromJsObject(listJS[i]));
+      list.addNoJS(new Color.fromJsObject(listJS[i]));
     
     return list;
   }
@@ -148,10 +148,10 @@ class Geometry extends EventDispatcher
   List<Vector3> get morphNormals
   {
     List<JsObject> listJS = _obj["morphNormals"];
-    ThreeObjectList<Vector3> list = [];
+    ThreeObjectList<Vector3> list = new ThreeObjectList<Vector3>(listJS);
     
     for(int i = 0, l = listJS.length; i < l; i++)
-      list.add(new Vector3.fromJsObject(listJS[i]));
+      list.addNoJS(new Vector3.fromJsObject(listJS[i]));
     
     return list;
   }

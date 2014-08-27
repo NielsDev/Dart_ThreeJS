@@ -31,10 +31,10 @@ class Object3D extends EventDispatcher
   List<Object3D> get children
   {
     List<JsObject> list = _obj["children"];
-    ThreeObjectList<Object3D> objList = [];
+    ThreeObjectList<Object3D> objList = new ThreeObjectList<Object3D>(list);
     
     for(int i = 0, l = list.length; i < l; i++)
-      objList.add(new Object3D.fromJsObject(list[i]));
+      objList.addNoJS(new Object3D.fromJsObject(list[i]));
     
     return objList;
   }

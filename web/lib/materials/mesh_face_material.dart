@@ -20,10 +20,10 @@ class MeshFaceMaterial extends Material
   List<Material> get materials
   {
     List<JsObject> list = _obj["materials"];
-    ThreeObjectList<Material> listMaterials = [];
+    ThreeObjectList<Material> listMaterials = new ThreeObjectList<Material>(list);
     
     for(int i = 0, l = list.length; i < l; i++)
-      listMaterials.add(new Material.fromJsObject(list[i]));
+      listMaterials.addNoJS(new Material.fromJsObject(list[i]));
     
     return listMaterials;
   }
