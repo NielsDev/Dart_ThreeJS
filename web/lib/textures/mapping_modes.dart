@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class TextureMapping extends ThreeBase
+class TextureMapping extends ThreeObject
 {
   TextureMapping()
   {

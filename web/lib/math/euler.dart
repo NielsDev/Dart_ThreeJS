@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Euler extends ThreeBase
+class Euler extends ThreeObject
 {
   Euler(num x, num y, num z, String order)
   {

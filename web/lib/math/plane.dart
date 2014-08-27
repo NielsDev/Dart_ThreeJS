@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Plane extends ThreeBase
+class Plane extends ThreeObject
 {
   Plane(Vector3 normal, num constant)
   {

@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Color extends ThreeBase
+class Color extends ThreeObject
 {
   Color(int hex)
   {

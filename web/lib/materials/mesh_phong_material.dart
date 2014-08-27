@@ -104,7 +104,7 @@ class MeshPhongMaterial extends Material
     if(mapJS == null)
       return null;
     
-    return ThreeBase._fromCacheJS(this, Texture, mapJS, "map");
+    return ThreeBase._fromCacheJS(_cache, Texture, mapJS, "map");
   }
   void set map(Texture map)
   {
@@ -124,7 +124,7 @@ class MeshPhongMaterial extends Material
     if(lightMapJS == null)
       return null;
     
-    return ThreeBase._fromCacheJS(this, Texture, lightMapJS, "lightMap");
+    return ThreeBase._fromCacheJS(_cache, Texture, lightMapJS, "lightMap");
   }
   void set lightMap(Texture lightMap)
   {
@@ -144,7 +144,7 @@ class MeshPhongMaterial extends Material
     if(specularMapJS == null)
       return null;
     
-    return ThreeBase._fromCacheJS(this, Texture, specularMapJS, "specularMap");
+    return ThreeBase._fromCacheJS(_cache, Texture, specularMapJS, "specularMap");
   }
   void set specularMap(Texture specularMap)
   {
@@ -164,7 +164,7 @@ class MeshPhongMaterial extends Material
     if(alphaMapJS == null)
       return null;
     
-    return ThreeBase._fromCacheJS(this, Texture, alphaMapJS, "alphaMap");
+    return ThreeBase._fromCacheJS(_cache, Texture, alphaMapJS, "alphaMap");
   }
   void set alphaMap(Texture alphaMap)
   {

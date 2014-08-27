@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Vector3 extends ThreeBase
+class Vector3 extends ThreeObject
 {
   Vector3(num x, num y, num z)
   {

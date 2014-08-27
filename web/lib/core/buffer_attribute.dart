@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class BufferAttribute extends ThreeBase
+class BufferAttribute extends ThreeObject
 {
   BufferAttribute(List array, int itemSize)
   {

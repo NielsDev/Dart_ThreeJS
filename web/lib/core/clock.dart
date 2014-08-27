@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Clock extends ThreeBase
+class Clock extends ThreeObject
 {
   Clock([bool autoStart])
   {

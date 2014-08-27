@@ -15,7 +15,7 @@ class LOD extends Object3D
   List<Object3D> get objects
   {
     List<JsObject> list = _obj["objects"];
-    List<Object3D> listObjects = [];
+    ThreeObjectList<Object3D> listObjects = [];
     
     for(int i = 0, l = list.length; i < l; i++)
       listObjects.add(new Object3D.fromJsObject(list[i]));

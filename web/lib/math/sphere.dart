@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Sphere extends ThreeBase
+class Sphere extends ThreeObject
 {
   Sphere(Vector3 center, num radius)
   {

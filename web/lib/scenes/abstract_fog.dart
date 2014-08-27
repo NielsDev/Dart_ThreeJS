@@ -1,5 +1,5 @@
 part of ThreeJSWrapper;
 
-abstract class AbstractFog extends ThreeBase
+abstract class AbstractFog extends ThreeObject
 {
 }

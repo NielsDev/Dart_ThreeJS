@@ -4,9 +4,14 @@ import 'dart:html';
 import 'dart:js';
 import 'dart:typed_data';
 import 'dart:web_gl';
+import 'dart:collection';
 
 // ThreeBase object
-part 'threebase.dart';
+part 'three_base.dart';
+part 'three_object.dart';
+
+// List that auto changes JsObject
+part 'three_object_list.dart';
 
 // Core
 part 'core/object3d.dart';

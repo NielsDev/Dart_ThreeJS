@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Ray extends ThreeBase
+class Ray extends ThreeObject
 {
   Ray(Vector3 origin, Vector3 direction)
   {

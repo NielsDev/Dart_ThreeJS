@@ -3,7 +3,7 @@ part of ThreeJSWrapper;
 // TODO: uses lists without a type because the documentation on the ThreeJS site is incomplete
 //       so that means some methods cannot be used...
 
-class Curve extends ThreeBase
+class Curve extends ThreeObject
 {
   Curve()
   {
@@ -19,9 +19,9 @@ class Curve extends ThreeBase
   // == METHODS ==
   
   
-  ThreeBase getPoint(num t) => new ThreeBase.fromJsObject(_obj.callMethod("getPoint", [ t ]));
+  ThreeObject getPoint(num t) => new ThreeObject.fromJsObject(_obj.callMethod("getPoint", [ t ]));
   
-  ThreeBase getPointAt(num t) => new ThreeBase.fromJsObject(_obj.callMethod("getPointAt", [ t ]));
+  ThreeObject getPointAt(num t) => new ThreeObject.fromJsObject(_obj.callMethod("getPointAt", [ t ]));
   
   List getPoints(int divisions) => _obj.callMethod("getPoints", [ divisions ]);
   
@@ -35,7 +35,7 @@ class Curve extends ThreeBase
   
   num getUtoTmapping(num u, num distance) => _obj.callMethod("getUtoTmapping", [ u, distance ]);
   
-  ThreeBase getTangent(num t) => new ThreeBase.fromJsObject(_obj.callMethod("getTangent", [ t ]));
+  ThreeObject getTangent(num t) => new ThreeObject.fromJsObject(_obj.callMethod("getTangent", [ t ]));
   
-  ThreeBase getTangentAt(num u) => new ThreeBase.fromJsObject(_obj.callMethod("getTangentAt", [ u ]));
+  ThreeObject getTangentAt(num u) => new ThreeObject.fromJsObject(_obj.callMethod("getTangentAt", [ u ]));
 }

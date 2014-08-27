@@ -31,14 +31,10 @@ class Object3D extends EventDispatcher
   List<Object3D> get children
   {
     List<JsObject> list = _obj["children"];
-    List<Object3D> objList = [];
+    ThreeObjectList<Object3D> objList = [];
     
     for(int i = 0, l = list.length; i < l; i++)
-    {
-      Object3D obj = new Object3D();
-      obj._obj = list[i];
-      objList.add(obj);
-    }
+      objList.add(new Object3D.fromJsObject(list[i]));
     
     return objList;
   }
@@ -48,15 +44,13 @@ class Object3D extends EventDispatcher
     List<JsObject> list = [];
     
     for(int i = 0, l = children.length; i < l; i++)
-    {
       list.add(children[i]._obj);
-    }
     
     _obj["children"] = new JsObject.jsify(list);
   }
   
   Vector3 get position => ThreeBase._fromCache(this, Vector3, "position");
-  void set position(ThreeBase position)
+  void set position(ThreeObject position)
   {
     _obj["position"] = position._obj;
     _cache["position"] = position;

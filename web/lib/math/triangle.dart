@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Triangle extends ThreeBase
+class Triangle extends ThreeObject
 {
   Triangle(Vector3 a, Vector3 b, Vector3 c)
   {

@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Matrix4 extends ThreeBase
+class Matrix4 extends ThreeObject
 {
   Matrix4([num n11, num n12, num n13, num n14, num n21, num n22, num n23, num n24, num n31, num n32, num n33, num n34, num n41, num n42, num n43, num n44])
   {

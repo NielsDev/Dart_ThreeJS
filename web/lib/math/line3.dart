@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Line3 extends ThreeBase
+class Line3 extends ThreeObject
 {
   Line3(Vector3 start, Vector3 end)
   {

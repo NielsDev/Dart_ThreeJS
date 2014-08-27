@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Frustum extends ThreeBase
+class Frustum extends ThreeObject
 {
   Frustum(Plane p0, Plane p1, Plane p2, Plane p3, Plane p4, Plane p5)
   {
@@ -15,7 +15,7 @@ class Frustum extends ThreeBase
   List<Plane> get planes
   {
     List<JsObject> list = _obj["planes"];
-    List<Plane> planeList = [];
+    ThreeObjectList<Plane> planeList = [];
     
     for(int i = 0, l = list.length; i < l; i++)
       planeList.add(new Plane.fromJsObject(list[i]));

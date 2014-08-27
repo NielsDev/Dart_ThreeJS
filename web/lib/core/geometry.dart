@@ -24,7 +24,7 @@ class Geometry extends EventDispatcher
   List<Vector3> get vertices
   {
     List<JsObject> list = _obj["vertices"];
-    List<Vector3> listVectors = [];
+    ThreeObjectList<Vector3> listVectors = [];
     
     for(int i = 0, l = list.length; i < l; i++)
       listVectors.add(new Vector3.fromJsObject(list[i]));
@@ -44,7 +44,7 @@ class Geometry extends EventDispatcher
   List<Color> get colors
   {
     List<JsObject> list = _obj["colors"];
-    List<Color> listColors = [];
+    ThreeObjectList<Color> listColors = [];
     
     for(int i = 0, l = list.length; i < l; i++)
       listColors.add(new Color.fromJsObject(list[i]));
@@ -64,11 +64,11 @@ class Geometry extends EventDispatcher
   List<Face3> get faces
   {
     List<JsObject> list = _obj["faces"];
-    List<Face3> listFaces = [];
+    ThreeObjectList<Face3> listFaces = [];
     
     for(int i = 0, l = list.length; i < l; i++)
       listFaces.add(new Face3.fromJsObject(list[i]));
-      
+    
     return listFaces;
   }
   void set faces(List<Face3> faces)
@@ -89,7 +89,7 @@ class Geometry extends EventDispatcher
     for(int i = 0, il = list.length; i < il; i++)
     {
       List<JsObject> subListJS = list[i];
-      List<Vector2> subList = new List<Vector2>();
+      ThreeObjectList<Vector2> subList = [];
       listFaceVertexUvs.add(subList);
       
       for(int j = 0, jl = subListJS.length; j < jl; j++)
@@ -128,7 +128,7 @@ class Geometry extends EventDispatcher
   List<Color> get morphColors
   {
     List<JsObject> listJS = _obj["morphColors"];
-    List<Color> list = [];
+    ThreeObjectList<Color> list = [];
     
     for(int i = 0, l = listJS.length; i < l; i++)
       list.add(new Color.fromJsObject(listJS[i]));
@@ -148,7 +148,7 @@ class Geometry extends EventDispatcher
   List<Vector3> get morphNormals
   {
     List<JsObject> listJS = _obj["morphNormals"];
-    List<Vector3> list = [];
+    ThreeObjectList<Vector3> list = [];
     
     for(int i = 0, l = listJS.length; i < l; i++)
       list.add(new Vector3.fromJsObject(listJS[i]));

@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class EventDispatcher extends ThreeBase
+class EventDispatcher extends ThreeObject
 {
   void addEventListener(String type, Function listener) => _obj.callMethod("addEventListener", [ type, listener ]);
   

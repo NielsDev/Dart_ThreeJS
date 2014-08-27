@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Box3 extends ThreeBase
+class Box3 extends ThreeObject
 {
   Box2(Vector3 min, Vector3 max)
   {

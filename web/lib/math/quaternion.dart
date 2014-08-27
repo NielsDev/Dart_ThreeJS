@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Quaternion extends ThreeBase
+class Quaternion extends ThreeObject
 {
   Quaternion(num x, num y, num z, num w)
   {

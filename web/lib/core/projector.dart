@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Projector extends ThreeBase
+class Projector extends ThreeObject
 {
   Projector()
   {

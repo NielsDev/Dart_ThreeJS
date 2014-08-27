@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Spline extends ThreeBase
+class Spline extends ThreeObject
 {
   Spline(Map points)
   {

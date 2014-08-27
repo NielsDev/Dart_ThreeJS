@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class WebGLProgram extends ThreeBase
+class WebGLProgram extends ThreeObject
 {
   WebGLProgram(WebGLRenderer renderer, Map code, Material material, Map parameters)
   {

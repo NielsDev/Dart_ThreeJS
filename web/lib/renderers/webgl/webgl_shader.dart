@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class WebGLShader extends ThreeBase
+class WebGLShader extends ThreeObject
 {
   WebGLShader(RenderingContext gl, int type, String string)
   {

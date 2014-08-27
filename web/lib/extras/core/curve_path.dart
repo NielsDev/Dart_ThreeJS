@@ -18,7 +18,7 @@ class CurvePath extends Curve
   List<Curve> get curves
   {
     List<JsObject> list = _obj["curves"];
-    List<Curve> listCurves = [];
+    ThreeObjectList<Curve> listCurves = [];
     
     for(int i = 0, l = list.length; i < l; i++)
       listCurves.add(new Curve.fromjsObject(list[i]));
@@ -38,7 +38,7 @@ class CurvePath extends Curve
   List<Path> get bends
   {
     List<JsObject> list = _obj["bends"];
-    List<Path> listBends = [];
+    ThreeObjectList<Path> listBends = [];
     
     for(int i = 0, l = list.length; i < l; i++)
       listBends.add(new Path.fromJsObject(list[i]));

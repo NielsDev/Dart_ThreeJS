@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Raycaster extends ThreeBase
+class Raycaster extends ThreeObject
 {
   Raycaster(Vector3 origin, Vector3 direction, num near, num far)
   {

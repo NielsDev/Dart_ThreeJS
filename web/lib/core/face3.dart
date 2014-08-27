@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class Face3 extends ThreeBase
+class Face3 extends ThreeObject
 {
   Face3(int a, int b, int c, [Vector3 normal, Color color, int materialIndex])
   {
@@ -36,13 +36,13 @@ class Face3 extends ThreeBase
     _obj["c"] = c;
   }
   
-  Vector3 get normal => new Vector3.fromJsObject(_obj["normal"]);
+  Vector3 get normal => ThreeBase._fromCache(this, Vector3, "normal");
   void set normal(Vector3 normal)
   {
     _obj["normal"] = normal._obj;
   }
   
-  Color get color => new Color.fromJsObject(_obj["color"]);
+  Color get color => ThreeBase._fromCache(this, Color, "color");
   void set color(Color color)
   {
     _obj["color"] = color._obj;
@@ -51,7 +51,7 @@ class Face3 extends ThreeBase
   List<Vector3> get vertexNormals
   {
     List<JsObject> list = _obj["vertexNormals"];
-    List<Vector3> vectorList = [];
+    ThreeObjectList<Vector3> vectorList = [];
     
     for(int i = 0, l = list.length; i < l; i++)
       vectorList.add(new Vector3.fromJsObject(list[i]));
@@ -71,12 +71,12 @@ class Face3 extends ThreeBase
   List<Color> get vertexColors
   {
     List<JsObject> list = _obj["vertexColors"];
-    List<Color> vectorList = [];
+    ThreeObjectList<Color> colorList = [];
     
     for(int i = 0, l = list.length; i < l; i++)
-      vectorList.add(new Color.fromJsObject(list[i]));
+      colorList.add(new Color.fromJsObject(list[i]));
     
-    return vectorList;
+    return colorList;
   }
   void set vertexColors(List<Color> list)
   {
@@ -91,7 +91,7 @@ class Face3 extends ThreeBase
   List<Vector4> get vertexTangents
   {
     List<JsObject> list = _obj["vertexTangents"];
-    List<Vector4> vectorList = [];
+    ThreeObjectList<Vector4> vectorList = [];
     
     for(int i = 0, l = list.length; i < l; i++)
       vectorList.add(new Vector4.fromJsObject(list[i]));
