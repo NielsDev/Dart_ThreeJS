@@ -81,38 +81,52 @@ class Geometry extends EventDispatcher
     _obj["faces"] = new JsObject.jsify(list);
   }
   
-  List<List<Vector2>> get faceVertexUvs
+  List<List<List<Vector2>>> get faceVertexUvs
   {
-    List<List<JsObject>> list = _obj["faceVertexUvs"];
-    List<List<Vector2>> listFaceVertexUvs = [];
+    List<List<List<JsObject>>> list = _obj["faceVertexUvs"];
+    List<List<List<Vector2>>> listFaceVertexUvs = [];
     
     for(int i = 0, il = list.length; i < il; i++)
     {
-      List<JsObject> subListJS = list[i];
-      ThreeObjectList<Vector2> subList = new ThreeObjectList<Vector2>(subListJS);
+      List<List<JsObject>> subListJS = list[i];
+      List<List<Vector2>> subList = [];
       listFaceVertexUvs.add(subList);
       
       for(int j = 0, jl = subListJS.length; j < jl; j++)
       {
-        subList.addNoJS(new Vector2.fromJsObject(subListJS[j]));
+        List<JsObject> subsubListJS = subListJS[j];
+        ThreeObjectList<Vector2> subsubList = new ThreeObjectList<Vector2>(subsubListJS);
+        subList.add(subsubList);
+        
+        for(int k = 0, kl = subListJS.length; k < kl; k++)
+        {
+          subsubList.addNoJS(new Vector2.fromJsObject(subsubListJS[k]));
+        }
       }
     }
     
     return listFaceVertexUvs;
   }
-  void set faceVertexUvs(List<List<Vector2>> faceVertexUvs)
+  void set faceVertexUvs(List<List<List<Vector2>>> faceVertexUvs)
   {
-    List<List<JsObject>> list = [];
+    List<List<List<JsObject>>> list = [];
     
     for(int i = 0, il = faceVertexUvs.length; i < il; i++)
     {
-      List<JsObject> subListJS = new List<JsObject>();
-      List<Vector2> subList = faceVertexUvs[i];
+      List<List<JsObject>> subListJS = [];
+      List<List<Vector2>> subList = faceVertexUvs[i];
       list.add(subListJS);
       
       for(int j = 0, jl = subList.length; j < jl; j++)
       {
-        subListJS.add(subList[j]._obj);
+        List<JsObject> subsubListJS = [];
+        List<Vector2> subsubList = subList[j];
+        subListJS.add(subsubListJS);
+        
+        for(int k = 0, kl = subList.length; k < kl; k++)
+        {
+          subsubListJS.add(subsubList[k]._obj);
+        }
       }
     }
     

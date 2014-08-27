@@ -4,8 +4,8 @@ class MeshBasicMaterial extends Material
 {
   MeshBasicMaterial(Map parameters)
   {
-    if(parameters["envMap"] != null)
-      parameters["envMap"] = parameters["envMap"]._obj;
+    if(parameters["envMap"] != null)  parameters["envMap"] = parameters["envMap"]._obj;
+    if(parameters["map"] != null)     parameters["map"] = parameters["map"]._obj;
     
     JsObject parametersJS = new JsObject.jsify(parameters);
     _obj = new JsObject(context["THREE"]["MeshBasicMaterial"], [ parametersJS ]);

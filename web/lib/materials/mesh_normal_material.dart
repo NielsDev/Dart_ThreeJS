@@ -5,9 +5,16 @@ class MeshNormalMaterial extends Material
   MeshNormalMaterial([Map parameters])
   {
     if(parameters == null)
+    {
       _obj = new JsObject(context["THREE"]["MeshNormalMaterial"]);
+    }
     else
+    {
+      if(parameters["envMap"] != null)  parameters["envMap"] = parameters["envMap"]._obj;
+      if(parameters["map"] != null)     parameters["map"] = parameters["map"]._obj;
+      
       _obj = new JsObject(context["THREE"]["MeshNormalMaterial"], [ new JsObject.jsify(parameters) ]);
+    }
   }
   
   MeshNormalMaterial.fromJsObject(JsObject obj)

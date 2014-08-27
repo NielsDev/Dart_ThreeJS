@@ -11,8 +11,9 @@ class RawShaderMaterial extends ShaderMaterial
     else
     {
       Map checkedParameters = parameters;
-      if(parameters["uniforms"] != null)
-        checkUniformsToJS(parameters["uniforms"]);
+      if(parameters["uniforms"] != null)          checkUniformsToJS(parameters["uniforms"]);
+      if(checkedParameters["envMap"] != null)     checkedParameters["envMap"] = parameters["envMap"]._obj;
+      if(checkedParameters["map"] != null)        checkedParameters["map"] = parameters["map"]._obj;
       
       _obj = new JsObject(context["THREE"]["RawShaderMaterial"], [ new JsObject.jsify(checkedParameters) ]);
     }

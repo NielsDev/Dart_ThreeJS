@@ -10,8 +10,8 @@ class PointCloudMaterial extends Material
     }
     else
     {
-      if(parameters["map"] != null)
-        parameters["map"] = parameters["map"]._obj;
+      if(parameters["envMap"] != null)  parameters["envMap"] = parameters["envMap"]._obj;
+      if(parameters["map"] != null)     parameters["map"] = parameters["map"]._obj;
       
       _obj = new JsObject(context["THREE"]["PointCloudMaterial"], [ new JsObject.jsify(parameters) ]);
     }
