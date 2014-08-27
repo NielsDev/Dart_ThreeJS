@@ -2,11 +2,15 @@ part of ThreeJSWrapper;
 
 class Face3 extends ThreeBase
 {
-  Face3(int a, int b, int c, Vector3 normal, Color color, int materialIndex)
+  Face3(int a, int b, int c, [Vector3 normal, Color color, int materialIndex])
   {
-    JsObject normalJS = normal._obj;
-    JsObject colorJS = color._obj;
-    _obj = new JsObject(context["THREE"]["Face3"], [ a, b, c, normalJS, colorJS, materialIndex ]);
+    List args = [ a, b, c ];
+    
+    if(normal != null)        args.add(normal._obj);
+    if(color != null)         args.add(color._obj);
+    if(materialIndex != null) args.add(materialIndex);
+    
+    _obj = new JsObject(context["THREE"]["Face3"], args);
   }
   
   Face3.fromJsObject(JsObject obj)
@@ -32,18 +36,16 @@ class Face3 extends ThreeBase
     _obj["c"] = c;
   }
   
-  Vector3 get normal => ThreeBase._fromCache(this, Vector3, "normal");
+  Vector3 get normal => new Vector3.fromJsObject(_obj["normal"]);
   void set normal(Vector3 normal)
   {
     _obj["normal"] = normal._obj;
-    _cache["normal"] = normal;
   }
   
-  Color get color => ThreeBase._fromCache(this, Color, "color");
+  Color get color => new Color.fromJsObject(_obj["color"]);
   void set color(Color color)
   {
     _obj["color"] = color._obj;
-    _cache["color"] = color;
   }
   
   List<Vector3> get vertexNormals
