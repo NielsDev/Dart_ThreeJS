@@ -12,6 +12,7 @@ part 'three_object.dart';
 
 // List that auto changes JsObject
 part 'three_object_list.dart';
+part 'three_list_list.dart';
 
 // Core
 part 'core/object3d.dart';

@@ -84,21 +84,21 @@ class Geometry extends EventDispatcher
   List<List<List<Vector2>>> get faceVertexUvs
   {
     List<List<List<JsObject>>> list = _obj["faceVertexUvs"];
-    List<List<List<Vector2>>> listFaceVertexUvs = [];
+    ThreeListList<ListBase<ListBase<Vector2>>> listFaceVertexUvs = new ThreeListList<ListBase<ListBase<Vector2>>>(list);
     
     for(int i = 0, il = list.length; i < il; i++)
     {
       List<List<JsObject>> subListJS = list[i];
-      List<List<Vector2>> subList = [];
-      listFaceVertexUvs.add(subList);
+      ThreeListList<ListBase<Vector2>> subList = new ThreeListList<ListBase<Vector2>>(subListJS);
+      listFaceVertexUvs.addNoJS(subList);
       
       for(int j = 0, jl = subListJS.length; j < jl; j++)
       {
         List<JsObject> subsubListJS = subListJS[j];
         ThreeObjectList<Vector2> subsubList = new ThreeObjectList<Vector2>(subsubListJS);
-        subList.add(subsubList);
+        subList.addNoJS(subsubList);
         
-        for(int k = 0, kl = subListJS.length; k < kl; k++)
+        for(int k = 0, kl = subsubListJS.length; k < kl; k++)
         {
           subsubList.addNoJS(new Vector2.fromJsObject(subsubListJS[k]));
         }
