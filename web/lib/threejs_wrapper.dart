@@ -148,6 +148,7 @@ part 'extras/helpers/directional_light_helper.dart';
 part 'extras/helpers/edges_helper.dart';
 part 'extras/helpers/face_normals_helper.dart';
 part 'extras/helpers/grid_helper.dart';
+part 'extras/helpers/hemisphere_light_helper.dart';
 
 
 // == CONSTANTS ==
