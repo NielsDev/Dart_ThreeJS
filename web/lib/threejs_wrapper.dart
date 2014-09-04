@@ -146,6 +146,7 @@ part 'extras/helpers/bounding_box_helper.dart';
 part 'extras/helpers/camera_helper.dart';
 part 'extras/helpers/directional_light_helper.dart';
 part 'extras/helpers/edges_helper.dart';
+part 'extras/helpers/face_normals_helper.dart';
 
 
 // == CONSTANTS ==
