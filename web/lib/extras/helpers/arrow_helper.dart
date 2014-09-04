@@ -1,6 +1,6 @@
 part of ThreeJSWrapper;
 
-class ArrowHelper extends ThreeObject
+class ArrowHelper extends Object3D
 {
   ArrowHelper(Vector3 dir, Vector3 origin, [num length, int hex, num headLength, num headWidth])
   {

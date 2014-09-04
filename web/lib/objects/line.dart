@@ -2,7 +2,7 @@ part of ThreeJSWrapper;
 
 class Line extends Object3D
 {
-  Line(Geometry geometry, [Material material, int type])
+  Line([Geometry geometry, Material material, int type])
   {
     List args = [ geometry._obj ];
     if(material != null)
