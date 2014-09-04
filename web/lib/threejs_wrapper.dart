@@ -139,6 +139,9 @@ part 'extras/geometries/torus_geometry.dart';
 part 'extras/geometries/torus_knot_geometry.dart';
 part 'extras/geometries/tube_geometry.dart';
 
+// Extras/helpers
+part 'extras/helpers/arrow_helper.dart';
+
 
 // == CONSTANTS ==
 
