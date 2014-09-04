@@ -152,6 +152,7 @@ part 'extras/helpers/hemisphere_light_helper.dart';
 part 'extras/helpers/point_light_helper.dart';
 part 'extras/helpers/spot_light_helper.dart';
 part 'extras/helpers/vertex_normals_helper.dart';
+part 'extras/helpers/vertex_tangents_helper.dart';
 
 
 // == CONSTANTS ==
