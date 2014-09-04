@@ -142,6 +142,7 @@ part 'extras/geometries/tube_geometry.dart';
 // Extras/helpers
 part 'extras/helpers/arrow_helper.dart';
 part 'extras/helpers/axis_helper.dart';
+part 'extras/helpers/bounding_box_helper.dart';
 
 
 // == CONSTANTS ==
